@@ -1,3 +1,107 @@
+id;nom;prenom;age;telephone;ville;groupe_sanguin;poids;taille
+1;Diouf;Dieynaba;14;765219458;Kaolak;B-;117.2;179
+2;Diatta;Marieme;74;758930103;Ziguinchor;O-;104.6;152
+3;Gomis;Aissatou;71;781111111;Tambacounda;O-;60.7;155
+4;Toure;Awa;28;756279418;Ziguinchor;O-;71.7;198
+5;Sambou;Omar;88;76 947-9356;Tambacounda;AB+;112.4;194
+6;Mbodj;Serigne;50;704700025;Tambacounda;B-;61.8;N/A
+7;ba;ibrahima;31;782259379;Saint-Louis;A+;72.7;184
+8;toure;Modou;6;788893693;TAMBACOUNDA;AB+;54.5;177
+9;Thiaw;Coumba;58;767017493;Ziguinchor;O-;67.4;188
+10; Dione ;Seydou;168;70 852-6283;dakar;A-;41.5;153
+11;KANE;OMAR;11;753411080;Diourbel;A+;51.2;191
+12;Tendeng;Alioune;22;701345817;Diourbel;O-;109.7;187
+13;Gomis;Ibrahima;30;754347043;Dakar;B-;61.5;154
+14;KANE;Thierno;53;76-408-88-69;diorbel;A+;51.2;199
+15;Badiane;Oumou;57;781324375;Saint-Louis;AB+;N/A;N/A
+16;DIATTA;Oumou;66;76 254 63 32;saint louis;OO+;78.9;155
+17;sow;OUSMANE;18;709910914;Diourbel;O-;89.0;186
+18;Faye;Kadiatou;61;708739263;Dakar;A+;50.8;152
+19;FAYE;aminata;17;702919136;Ziguinchor;O-;96.0;189
+20;Sow;Ousmane;18;772222222;Diourbel;O-;89.0;186
+21;FALL;Marieme;65;00221765043346;thies;O+;106.3;163
+22;Diop;Pape;50;768285817;Louga;A+;48.7;144
+23;gaye;Omar;67;768069499;Saint-Louis;A-;118.2;179
+24;SOW;Ousmane;;70 188-7619;ziguincor;B+;70.4;199
+25;SECK;Dieynaba;57;00221785426125;saint louis;D-;69.8;157
+26;Dione;Yacine;38;762932227;Tamba;A-;51.3;154
+27;Mbaye;Cheikh;15;773607983;Kaolack;AB+;88.4;185
+28;Diallo;Alioune;85;780000000;Louga;O+;77.4;186
+29;Camara;Bineta;40;70-581-39-94;Louga;AB-;50.1;149
+30;Dione;Aminata;26;706866294;Kaolack;B-;57.8;182
+31;TRAORE;BOUBACAR;68;766289913;Louga;AB+;67.0;170
+32;KOUYATE;Modou;;770000000; Kaolack;CC+;100.0;188
+33;Gaye;Khady;16;705472030;Thies;A+;70.3;175
+34;Gaye;Astou;84;772016911;Louga;AB-;104.0;146
+35;Sy;Omar;22;752701122;Kaolack;A-;111.4;144
+36;Goudiaby;Awa;65;76 121-2267;Louga;O-;48.4;163
+37;Diop;Mamadou;44;703768991;Tambacounda;B+;118.5;174
+38;Ndiaye;Abdou;16;761541754;Thies;B+;57.5;167
+39;Sow;Ousmane;18;709910914;Diourbel;O-;89.0;186
+40;DIEME;Aminata;74;70 414-2605;THIÈS;AB-;45.4;173
+41;Dione;Ndéye;150;707629075;Ziguinchor;O+;64.8;174
+42;Badiane;Mariam;82;706802080;Thies;BB-;55.2;142
+43;Dieme;Mariama;85;762147076;Ziguinchor;AB-;abc;167
+44;FALL;Abdou;61;707477326;saint-louis;O-;117.2;148
+45;Faye;Khady;5;763484601;Louga;B+;43.3;163
+46;Badiane;Awa;84;70 668-8338;Thies;B+;90.8;192
+47;Mbaye;Coumba;50;766424075;Diourbel;A+;abc;180
+48; Gaye ;Dieynaba;-16;76 558 38 14;Thies ;AB-;75.0;165
+49;Badji;Ndéye;62;768368916;Diourbel;B-;115.9;169
+50;Ndour;Lamine;39;761942411;Diourbel;D-;64.8;168
+51;Camara;Yacine;12;773545061;Thies;O-;95.7;148
+52;SAMBOU;Ibrahima;7;769014965;thiès;A-;72.1;144
+53;Tendeng ;Saliou;60;701677390;Louga;A+;47.5;159
+54;Tendeng;Mariama;73;00221752010496;Thies;B-;90.0;156
+55;Mendy;Dieynaba;126;772147909;Ziguinchor;AB+;119.8;187
+56;Tendeng;Mariama;73;752010496;Thiès;B-;90.0;156
+57;Diatta;Abdou;4;775382463;Saint-Louis;AB+;43.1;178
+58;Ndoye;Rokhaya;10;773644281;Thies;B-;42.9;xyz
+59;Coly;Aminata;88;761938483;Ziguinchor;A+;104.4;165
+60;Faye;Seydou;28;77 796-0328;Louga;AB-;83.4;166
+61;CAMARA;Serigne;68;+221764566415; Thies;BB-;107.7;148
+62;Bodian;Awa;;778741810;Thies;B+;79.9;185
+63;Sy;Fatoumata;7;703335925;Diourbel;O;79.8;197
+64;Badiane;Lamine;88;771111111;Saint-Louis;AB+;46.8;155
+65;Diallo;Fatou;82;764565539;Louga;O;90.5;187
+66;Bodian;Modou;0;783851852;Saint-Louis;A-;88.8;164
+67;Diouf;Awa;64;755843754;Dakar;AB-;98.4;154
+68;Diatta;Oumou;41;782880819;Ziguinchor;P+;86.8;184
+69;Tendeng;Dieynaba;81;783411048;ZIGUINCHOR;AB+;99.5;190
+70;Kouyate;Fatoumata;11;765775989;Dakar;B-;N/A;N/A
+71;Faye;Aminata;17;702919136;Ziginchor;O-;96.0;189
+72; Badiane ;Aminata;;75 144-0466;Kaolak;A+;54.4;184
+73;Sambou;Bineta;41;77 603-8571;Kaolack;O+;66.1;184
+74;Sambou;Abdou;46;772687197;ziguinchor;AB-;57.2;151
+75;Diallo;Alioune;85;706944126;Louga;O+;77.4;186
+76;Ndiaye;Saliou;14;704671545;Saint-Louis;O-;44.0;xyz
+77;Kane;Ndéye;75;784895475;tambacounda ;AB+;76.8;182
+78;Thiam;Mamadou;6;777879593;Kaolack ;A-;54.8;160
+79;Thiaw;Khady;60;762330848; Louga;A-;112.5;179
+80;Diatta;Seydou;39;759874152;Dakar;AB+;114.5;146
+81;Goudiaby;Mariama;64;787950605;Ziguinchor;O+;71.3;152
+82;DIATTA;Khady;50;77-897-43-91;Kaolack ;Z-;84.1;162
+83;Ba;Lamine;15;763239215;Saint-Louis;O-;79.4;165
+84;Manga;Dieynaba;66;778750676;Lougar;A+;55.0;163
+85;Gomis;Astou;82;756623525;Thies;B-;93.8;154
+86;Sy;Mariama;2;753123709;Kaolack;A+;117.9;xyz
+87;GOUDIABY;Adama;;78-887-36-31;DIOURBEL;C+;46.5;160
+88;Manga;Lamine;11;769952696;Lougar;AB-;90.1;196
+89;Thiaw;Rokhaya;87;767392547;Diorbel;A-;94.0;170
+90;BADJI;Modou;55;75 778-5090;louga;AB+;49.2;141
+91;TENDENG;AISSATOU;68;778092099;Thies;B+;53.6;143
+92;SAMBOU;Alpha;59;77 901 19 40;Saint Louis;O-;114.1;143
+93;Ndoye;Fatou;180;753479096;Thies;B+;54.2;190
+94;BODIAN;Modou;88;783851852;SAINT-LOUIS;A-;88.8;164
+95;DEMBELE;Oumou;70;+221788058678;Lougar;P+;96.6;192
+96;GOMIS;Khady;77;760000000;Kaolak;CC+;111.1;184
+97; Diop ;Coumba;42;707265865;Kaolack;AB-;55.9;142
+98;sy;Mariama;2;753123709;kaolack;A+;117.9;175
+99;Gomis;Bineta;26;787273233;Saint-Louis;A+;87.9;171
+100;Sarr;Cheikh;23;70 183-0167;Diourbel;O+;94.4;181
+101;Gomis ;Lamine;9;785815115;Diourbel;AB+;52.1;178
+102;Thiaw;Marieme;34;785137722;Kaolack;O+;111.8;165
+103;Faye;Khady;5;763484601;Louga;B+;43.3;
 104;DIONE;Serigne;;77-419-28-81;Kaolack ;A;72.2;175
 105;Bodian ;Abdou;65;761043037; Kaolack;AB+;107.0;177
 106;Badiane ;Omar;90;709294272;Louga;B-;51.8;184
