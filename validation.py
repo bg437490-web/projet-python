@@ -144,10 +144,11 @@ def valider_groupe_sanguin(valeur):
     Vérifie que le groupe sanguin est dans la liste autorisée.
     Retourne (groupe_brut, message_anomalie_ou_None, est_rejetable).
     """
-    groupe = valeur.strip()
+    # Force la mise en majuscules pour accepter 'a+' ou 'ab-' sans rejeter le patient
+    groupe = valeur.strip().upper()
 
     if groupe not in GROUPES_SANGUINS_VALIDES:
-        return groupe, f"Groupe sanguin invalide : '{groupe}'", True
+        return valeur, f"Groupe sanguin invalide : '{valeur}'", True
 
     return groupe, None, False
 

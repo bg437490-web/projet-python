@@ -352,82 +352,97 @@ def nettoyer_patient(patient_brut):
 #  8. Gestion des doublons
 # ─────────────────────────────────────────────
 
+
+from validation import valider_patient, CORRECTIONS_VILLES
+
 def supprimer_doublons(patients_valides):
     """
     Supprime les doublons d'une liste de patients nettoyés.
     Deux patients sont considérés comme doublons s'ils ont les mêmes 
-    nom, prénom et numéro de téléphone. En cas de doublon, on conserve 
-    la première occurrence rencontrée.
-    
-    Retourne (liste_patients_uniques, liste_doublons_detectes).
+    nom, prénom et numéro de téléphone.
     """
-    patients_uniques = []
-    les_doublons = [] 
-    cles_existantes = set()
+    propres_sans_doublons = []
+    liste_doublons = []
+    vus = set()
 
-    for patient in patients_valides:
-        nom_cle = str(patient.get("nom", "")).strip().lower()
-        prenom_cle = str(patient.get("prenom", "")).strip().lower()
-        tel_cle = str(patient.get("telephone", "")).strip()
-        
-        cle_unique = (nom_cle, prenom_cle, tel_cle)
-
-        if cle_unique in cles_existantes:
-            # On stocke le patient complet
-            les_doublons.append(patient) 
+    for p in patients_valides:
+        if isinstance(p, dict):
+            nom = str(p.get("nom", "")).strip().lower()
+            prenom = str(p.get("prenom", "")).strip().lower()
+            telephone = str(p.get("telephone", "")).strip().lower()
         else:
-            cles_existantes.add(cle_unique)
-            patients_uniques.append(patient)
+            nom, prenom, telephone = "", "", ""
 
-    return patients_uniques, les_doublons
+        cle_unique = (nom, prenom, telephone)
+        
+        if not nom and not prenom:
+            propres_sans_doublons.append(p)
+            continue
 
+        if cle_unique in vus:
+            liste_doublons.append(p)
+        else:
+            vus.add(cle_unique)
+            propres_sans_doublons.append(p)
+            
+    return propres_sans_doublons, liste_doublons
 
-# ─────────────────────────────────────────────
-#  9. Processus global de nettoyage
-# ─────────────────────────────────────────────
 
 def nettoyer_tous_les_patients(patients_bruts):
     """
-    Nettoie tous les patients et retourne un dictionnaire compatible
-    à 100% avec export.py et les statistiques de la collègue.
+    Fonction maîtresse qui orchestre la validation, la séparation
+    des rejets, l'application des corrections et le dédoublonnage.
     """
     valides_avant_dedup = []
     rejetes = []
-    anomalies = []
-
-    for p in patients_bruts:
-        propre, erreurs, valide = nettoyer_patient(p)
-        id_p = p.get("id", "?")
-        for e in erreurs:
-            anomalies.append(f"Patient #{id_p} : {e}")
-        if valide:
-            valides_avant_dedup.append(propre)
-        else:
-            rejetes.append({"patient": p, "erreurs": erreurs})
-
-    # Déduplication
-    valides, les_doublons_dicts = supprimer_doublons(valides_avant_dedup)
-    nb_doublons = len(les_doublons_dicts)
+    anomalies_globales = []
     
-    if nb_doublons > 0:
-        anomalies.append(
-            f"[DOUBLONS] {nb_doublons} doublon(s) supprimé(s)"
-        )
-
-    # --- SÉCURITÉ ET COMPATIBILITÉ COLLÈGUE ---
-    # Sa fonction calculer_statistiques(..., doublons) s'attend à recevoir 
-    # une structure mesurable par len() pour faire ses calculs.
-    # On lui génère une liste d'index fictifs pour que son len() fonctionne 
-    # sans jamais provoquer de plantage.
-    liste_doublons_compat = [i for i in range(nb_doublons)]
-
-    return {
-        "patients_valides": valides,
-        "patients_rejetes": rejetes,
-        "toutes_anomalies": anomalies,
-        "nb_doublons":      nb_doublons,
+    for p in patients_bruts:
+        # 1. Appel de TA fonction de validation (située dans validation.py)
+        anomalies_patient, est_valide = valider_patient(p)
         
-        # Cette clé donne EXACTEMENT ce que statistiques.py attend pour faire len() 
-        # sans planter et sans fausser les calculs de totaux !
-        "liste_doublons":   liste_doublons_compat  
+        if not est_valide:
+            # Le patient possède une anomalie rédhibitoire (ex: ++A, Z-, âge négatif) -> REJET
+            rejetes.append({
+                "patient": p,
+                "erreurs": anomalies_patient if anomalies_patient else ["Données critiques invalides"]
+            })
+            # On stocke ces anomalies pour le rapport.txt
+            anomalies_globales.extend(anomalies_patient)
+        else:
+            # Le patient est médicalement acceptable -> On applique un léger nettoyage de texte
+            p_propre = p.copy()
+            
+            # Harmonisation de la casse pour la ville
+            ville_brute = str(p_propre.get("ville", "")).strip().lower()
+            if ville_brute in CORRECTIONS_VILLES:
+                p_propre["ville"] = CORRECTIONS_VILLES[ville_brute]
+            else:
+                p_propre["ville"] = p_propre["ville"].strip().capitalize()
+                
+            # Nettoyage cosmétique du groupe sanguin (mise en majuscule)
+            p_propre["groupe_sanguin"] = str(p_propre.get("groupe_sanguin", "")).strip().upper()
+            
+            # S'il y avait de petites anomalies non-rejetables (ex: téléphone suspect mais lisible)
+            if anomalies_patient:
+                anomalies_globales.extend(anomalies_patient)
+                
+            valides_avant_dedup.append(p_propre)
+
+    # 2. Application de ton dédoublonnage sur les patients médicalement valides
+    valides_finals, les_doublons_trouves = supprimer_doublons(valides_avant_dedup)
+    
+    # 3. Enregistrement des anomalies de doublons
+    for d in les_doublons_trouves:
+        nom_d = d.get("nom", "Inconnu")
+        prenom_d = d.get("prenom", "")
+        tel_d = d.get("telephone", "N/A")
+        anomalies_globales.append(f"Ligne {d.get('_ligne', '?')} | DOUBLON | Doublon supprimé : {nom_d} {prenom_d} ({tel_d})")
+
+    # 4. Renvoi du dictionnaire complet attendu par main.py
+    return {
+        "patients_valides": valides_finals,
+        "patients_rejetes": rejetes,
+        "toutes_anomalies": anomalies_globales,
+        "liste_doublons": les_doublons_trouves
     }

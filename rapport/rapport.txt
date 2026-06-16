@@ -1,0 +1,535 @@
+=======================================================
+   RAPPORT DE NETTOYAGE — DONNÉES MÉDICALES PATIENTS
+=======================================================
+  Généré le : 16/06/2026 à 19:01:49
+=======================================================
+
+───────────────────────────────────────────────────────
+  RÉSUMÉ GÉNÉRAL
+───────────────────────────────────────────────────────
+  Lignes lues dans le fichier brut  : 300
+  Patients valides après nettoyage  : 196
+  Doublons supprimés                : 22
+  Patients rejetés                  : 82
+
+───────────────────────────────────────────────────────
+  STATISTIQUES SUR LES PATIENTS VALIDES
+───────────────────────────────────────────────────────
+  Moyenne des âges        : 47.5 ans
+  Moyenne des poids       : 80.6 kg
+  Ville la plus fréquente : Louga
+
+  Répartition des groupes sanguins :
+    A+    : 20 patient(s)
+    A-    : 22 patient(s)
+    AB+   : 29 patient(s)
+    AB-   : 26 patient(s)
+    B+    : 26 patient(s)
+    B-    : 28 patient(s)
+    O+    : 17 patient(s)
+    O-    : 28 patient(s)
+
+───────────────────────────────────────────────────────
+  ANOMALIES DÉTECTÉES (213 au total)
+───────────────────────────────────────────────────────
+  • Ligne 2 | VILLE   | Ville mal orthographiée ou mal formatée : 'Kaolak'
+  • Ligne 7 | TAILLE  | Taille manquante ou N/A
+  • Ligne 9 | VILLE   | Ville mal orthographiée ou mal formatée : 'TAMBACOUNDA'
+  • Ligne 11 | ÂGE     | Âge irréaliste (> 120) : 168
+  • Ligne 11 | VILLE   | Ville mal orthographiée ou mal formatée : 'dakar'
+  • Ligne 15 | VILLE   | Ville mal orthographiée ou mal formatée : 'diorbel'
+  • Ligne 16 | POIDS   | Poids manquant ou N/A
+  • Ligne 16 | TAILLE  | Taille manquante ou N/A
+  • Ligne 17 | VILLE   | Ville mal orthographiée ou mal formatée : 'saint louis'
+  • Ligne 17 | GROUPE  | Groupe sanguin invalide : 'OO+'
+  • Ligne 22 | VILLE   | Ville mal orthographiée ou mal formatée : 'thies'
+  • Ligne 25 | ÂGE     | Âge manquant
+  • Ligne 25 | VILLE   | Ville mal orthographiée ou mal formatée : 'ziguincor'
+  • Ligne 26 | VILLE   | Ville mal orthographiée ou mal formatée : 'saint louis'
+  • Ligne 26 | GROUPE  | Groupe sanguin invalide : 'D-'
+  • Ligne 27 | VILLE   | Ville mal orthographiée ou mal formatée : 'Tamba'
+  • Ligne 33 | ÂGE     | Âge manquant
+  • Ligne 33 | GROUPE  | Groupe sanguin invalide : 'CC+'
+  • Ligne 34 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 39 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 41 | VILLE   | Ville mal orthographiée ou mal formatée : 'THIÈS'
+  • Ligne 42 | ÂGE     | Âge irréaliste (> 120) : 150
+  • Ligne 43 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 43 | GROUPE  | Groupe sanguin invalide : 'BB-'
+  • Ligne 44 | POIDS   | Poids non numérique : 'abc'
+  • Ligne 45 | VILLE   | Ville mal orthographiée ou mal formatée : 'saint-louis'
+  • Ligne 47 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 48 | POIDS   | Poids non numérique : 'abc'
+  • Ligne 49 | ÂGE     | Âge négatif : -16
+  • Ligne 49 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 51 | GROUPE  | Groupe sanguin invalide : 'D-'
+  • Ligne 52 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 53 | VILLE   | Ville mal orthographiée ou mal formatée : 'thiès'
+  • Ligne 55 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 56 | ÂGE     | Âge irréaliste (> 120) : 126
+  • Ligne 59 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 59 | TAILLE  | Taille non numérique : 'xyz'
+  • Ligne 62 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 62 | GROUPE  | Groupe sanguin invalide : 'BB-'
+  • Ligne 63 | ÂGE     | Âge manquant
+  • Ligne 63 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 64 | GROUPE  | Groupe sanguin invalide : 'O'
+  • Ligne 66 | GROUPE  | Groupe sanguin invalide : 'O'
+  • Ligne 67 | ÂGE     | Âge égal à zéro (suspect) : 0
+  • Ligne 69 | GROUPE  | Groupe sanguin invalide : 'P+'
+  • Ligne 70 | VILLE   | Ville mal orthographiée ou mal formatée : 'ZIGUINCHOR'
+  • Ligne 71 | POIDS   | Poids manquant ou N/A
+  • Ligne 71 | TAILLE  | Taille manquante ou N/A
+  • Ligne 72 | VILLE   | Ville mal orthographiée ou mal formatée : 'Ziginchor'
+  • Ligne 73 | ÂGE     | Âge manquant
+  • Ligne 73 | VILLE   | Ville mal orthographiée ou mal formatée : 'Kaolak'
+  • Ligne 75 | VILLE   | Ville mal orthographiée ou mal formatée : 'ziguinchor'
+  • Ligne 77 | TAILLE  | Taille non numérique : 'xyz'
+  • Ligne 78 | VILLE   | Ville mal orthographiée ou mal formatée : 'tambacounda'
+  • Ligne 83 | GROUPE  | Groupe sanguin invalide : 'Z-'
+  • Ligne 85 | VILLE   | Ville mal orthographiée ou mal formatée : 'Lougar'
+  • Ligne 86 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 87 | TAILLE  | Taille non numérique : 'xyz'
+  • Ligne 88 | ÂGE     | Âge manquant
+  • Ligne 88 | VILLE   | Ville mal orthographiée ou mal formatée : 'DIOURBEL'
+  • Ligne 88 | GROUPE  | Groupe sanguin invalide : 'C+'
+  • Ligne 89 | VILLE   | Ville mal orthographiée ou mal formatée : 'Lougar'
+  • Ligne 90 | VILLE   | Ville mal orthographiée ou mal formatée : 'Diorbel'
+  • Ligne 91 | VILLE   | Ville mal orthographiée ou mal formatée : 'louga'
+  • Ligne 92 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 93 | VILLE   | Ville mal orthographiée ou mal formatée : 'Saint Louis'
+  • Ligne 94 | ÂGE     | Âge irréaliste (> 120) : 180
+  • Ligne 94 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 95 | VILLE   | Ville mal orthographiée ou mal formatée : 'SAINT-LOUIS'
+  • Ligne 96 | VILLE   | Ville mal orthographiée ou mal formatée : 'Lougar'
+  • Ligne 96 | GROUPE  | Groupe sanguin invalide : 'P+'
+  • Ligne 97 | VILLE   | Ville mal orthographiée ou mal formatée : 'Kaolak'
+  • Ligne 97 | GROUPE  | Groupe sanguin invalide : 'CC+'
+  • Ligne 99 | VILLE   | Ville mal orthographiée ou mal formatée : 'kaolack'
+  • Ligne 104 | TAILLE  | Taille manquante ou N/A
+  • Ligne 105 | ÂGE     | Âge manquant
+  • Ligne 105 | GROUPE  | Groupe sanguin invalide : 'A'
+  • Ligne 108 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 109 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 110 | VILLE   | Ville mal orthographiée ou mal formatée : 'Diorbel'
+  • Ligne 111 | GROUPE  | Groupe sanguin invalide : 'B'
+  • Ligne 113 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 113 | POIDS   | Poids manquant ou N/A
+  • Ligne 116 | VILLE   | Ville mal orthographiée ou mal formatée : 'saint-louis'
+  • Ligne 117 | TAILLE  | Taille non numérique : 'xyz'
+  • Ligne 118 | VILLE   | Ville mal orthographiée ou mal formatée : 'Diorbel'
+  • Ligne 119 | GROUPE  | Groupe sanguin invalide : 'O'
+  • Ligne 121 | ÂGE     | Âge égal à zéro (suspect) : 0
+  • Ligne 122 | GROUPE  | Groupe sanguin invalide : 'AB'
+  • Ligne 132 | VILLE   | Ville mal orthographiée ou mal formatée : 'tambacounda'
+  • Ligne 134 | ÂGE     | Âge irréaliste (> 120) : 130
+  • Ligne 137 | VILLE   | Ville mal orthographiée ou mal formatée : 'THIES'
+  • Ligne 138 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 139 | VILLE   | Ville mal orthographiée ou mal formatée : 'kaolak'
+  • Ligne 142 | ÂGE     | Âge irréaliste (> 120) : 125
+  • Ligne 145 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 145 | POIDS   | Poids manquant ou N/A
+  • Ligne 146 | ÂGE     | Âge manquant
+  • Ligne 146 | VILLE   | Ville mal orthographiée ou mal formatée : 'Saint louis'
+  • Ligne 146 | GROUPE  | Groupe sanguin invalide : 'CC+'
+  • Ligne 148 | GROUPE  | Groupe sanguin invalide : 'AB'
+  • Ligne 150 | GROUPE  | Groupe sanguin invalide : 'B'
+  • Ligne 153 | VILLE   | Ville mal orthographiée ou mal formatée : 'KAOLACK'
+  • Ligne 157 | VILLE   | Ville mal orthographiée ou mal formatée : 'Kaolak'
+  • Ligne 157 | GROUPE  | Groupe sanguin invalide : 'Z-'
+  • Ligne 158 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 159 | ÂGE     | Âge irréaliste (> 120) : 130
+  • Ligne 162 | VILLE   | Ville mal orthographiée ou mal formatée : 'LOUGA'
+  • Ligne 164 | POIDS   | Poids non numérique : 'abc'
+  • Ligne 166 | VILLE   | Ville mal orthographiée ou mal formatée : 'Dakkar'
+  • Ligne 168 | ÂGE     | Âge irréaliste (> 120) : 172
+  • Ligne 170 | VILLE   | Ville mal orthographiée ou mal formatée : 'TAMBACOUNDA'
+  • Ligne 172 | ÂGE     | Âge manquant
+  • Ligne 173 | TAILLE  | Taille manquante ou N/A
+  • Ligne 178 | VILLE   | Ville mal orthographiée ou mal formatée : 'THIÈS'
+  • Ligne 180 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 181 | TAILLE  | Taille non numérique : 'xyz'
+  • Ligne 182 | ÂGE     | Âge égal à zéro (suspect) : 0
+  • Ligne 183 | ÂGE     | Âge manquant
+  • Ligne 183 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 184 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 185 | GROUPE  | Groupe sanguin invalide : 'AA+'
+  • Ligne 186 | VILLE   | Ville mal orthographiée ou mal formatée : 'TAMBACOUNDA'
+  • Ligne 187 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 190 | ÂGE     | Âge égal à zéro (suspect) : 0
+  • Ligne 193 | POIDS   | Poids manquant ou N/A
+  • Ligne 195 | VILLE   | Ville mal orthographiée ou mal formatée : 'tambacounda'
+  • Ligne 197 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 198 | ÂGE     | Âge manquant
+  • Ligne 198 | VILLE   | Ville mal orthographiée ou mal formatée : 'LOUGA'
+  • Ligne 198 | GROUPE  | Groupe sanguin invalide : 'A'
+  • Ligne 200 | VILLE   | Ville mal orthographiée ou mal formatée : 'kaolack'
+  • Ligne 201 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 202 | ÂGE     | Âge irréaliste (> 120) : 145
+  • Ligne 205 | GROUPE  | Groupe sanguin invalide : 'B'
+  • Ligne 208 | ÂGE     | Âge irréaliste (> 120) : 200
+  • Ligne 208 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 210 | VILLE   | Ville mal orthographiée ou mal formatée : 'DAKAR'
+  • Ligne 212 | VILLE   | Ville mal orthographiée ou mal formatée : 'DIOURBEL'
+  • Ligne 213 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 214 | ÂGE     | Âge égal à zéro (suspect) : 0
+  • Ligne 216 | VILLE   | Ville mal orthographiée ou mal formatée : 'Tamba'
+  • Ligne 217 | POIDS   | Poids non numérique : 'abc'
+  • Ligne 218 | TAILLE  | Taille non numérique : 'xyz'
+  • Ligne 221 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 222 | GROUPE  | Groupe sanguin invalide : 'OO+'
+  • Ligne 223 | VILLE   | Ville mal orthographiée ou mal formatée : 'Saint louis'
+  • Ligne 223 | GROUPE  | Groupe sanguin invalide : 'P+'
+  • Ligne 226 | VILLE   | Ville mal orthographiée ou mal formatée : 'TAMBACOUNDA'
+  • Ligne 228 | VILLE   | Ville mal orthographiée ou mal formatée : 'saint-louis'
+  • Ligne 229 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 230 | GROUPE  | Groupe sanguin invalide : 'C+'
+  • Ligne 232 | VILLE   | Ville mal orthographiée ou mal formatée : 'Saint Louis'
+  • Ligne 233 | POIDS   | Poids manquant ou N/A
+  • Ligne 233 | TAILLE  | Taille manquante ou N/A
+  • Ligne 235 | VILLE   | Ville mal orthographiée ou mal formatée : 'SAINT-LOUIS'
+  • Ligne 235 | GROUPE  | Groupe sanguin invalide : 'OO+'
+  • Ligne 237 | TAILLE  | Taille manquante ou N/A
+  • Ligne 239 | VILLE   | Ville mal orthographiée ou mal formatée : 'LOUGA'
+  • Ligne 240 | ÂGE     | Âge irréaliste (> 120) : 999
+  • Ligne 244 | VILLE   | Ville mal orthographiée ou mal formatée : 'Saint louis'
+  • Ligne 245 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 248 | VILLE   | Ville mal orthographiée ou mal formatée : 'KAOLACK'
+  • Ligne 250 | ÂGE     | Âge manquant
+  • Ligne 253 | ÂGE     | Âge négatif : -3
+  • Ligne 253 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 254 | VILLE   | Ville mal orthographiée ou mal formatée : 'KAOLACK'
+  • Ligne 256 | ÂGE     | Âge manquant
+  • Ligne 256 | VILLE   | Ville mal orthographiée ou mal formatée : 'Kaolak'
+  • Ligne 256 | GROUPE  | Groupe sanguin invalide : 'D-'
+  • Ligne 257 | VILLE   | Ville mal orthographiée ou mal formatée : 'saint-louis'
+  • Ligne 259 | ÂGE     | Âge négatif : -12
+  • Ligne 260 | VILLE   | Ville mal orthographiée ou mal formatée : 'thies'
+  • Ligne 262 | GROUPE  | Groupe sanguin invalide : '++A'
+  • Ligne 263 | VILLE   | Ville mal orthographiée ou mal formatée : 'Dakarr'
+  • Ligne 265 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 268 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 271 | VILLE   | Ville mal orthographiée ou mal formatée : 'DAKAR'
+  • Ligne 272 | VILLE   | Ville mal orthographiée ou mal formatée : 'tambacounda'
+  • Ligne 275 | GROUPE  | Groupe sanguin invalide : 'BB-'
+  • Ligne 276 | GROUPE  | Groupe sanguin invalide : 'O'
+  • Ligne 277 | VILLE   | Ville mal orthographiée ou mal formatée : 'Saint-louis'
+  • Ligne 279 | ÂGE     | Âge manquant
+  • Ligne 281 | GROUPE  | Groupe sanguin invalide : 'AB'
+  • Ligne 282 | POIDS   | Poids manquant ou N/A
+  • Ligne 283 | VILLE   | Ville mal orthographiée ou mal formatée : 'SAINT-LOUIS'
+  • Ligne 284 | VILLE   | Ville mal orthographiée ou mal formatée : 'Ziginchor'
+  • Ligne 290 | VILLE   | Ville mal orthographiée ou mal formatée : 'TAMBACOUNDA'
+  • Ligne 293 | ÂGE     | Âge négatif : -15
+  • Ligne 298 | TAILLE  | Taille manquante ou N/A
+  • Ligne 301 | VILLE   | Ville mal orthographiée ou mal formatée : 'saint louis'
+  • Ligne 40 | DOUBLON | Doublon supprimé : Sow Ousmane (709910914)
+  • Ligne 72 | DOUBLON | Doublon supprimé : Faye Aminata (702919136)
+  • Ligne 143 | DOUBLON | Doublon supprimé : diop mamadou (703768991)
+  • Ligne 160 | DOUBLON | Doublon supprimé : Badiane Omar (709294272)
+  • Ligne 175 | DOUBLON | Doublon supprimé : Mbaye Cheikh (773607983)
+  • Ligne 191 | DOUBLON | Doublon supprimé : SAMBOU BINETA (776038571)
+  • Ligne 195 | DOUBLON | Doublon supprimé : Toure Modou (788893693)
+  • Ligne 197 | DOUBLON | Doublon supprimé : GOMIS astou (756623525)
+  • Ligne 209 | DOUBLON | Doublon supprimé : faye seydou (777960328)
+  • Ligne 211 | DOUBLON | Doublon supprimé : Mbodj Serigne (704700025)
+  • Ligne 221 | DOUBLON | Doublon supprimé : Fall  Saliou (785186414)
+  • Ligne 224 | DOUBLON | Doublon supprimé : Gaye  Astou (772016911)
+  • Ligne 231 | DOUBLON | Doublon supprimé : Diop Mamadou (703768991)
+  • Ligne 239 | DOUBLON | Doublon supprimé : MANGA Dieynaba (778750676)
+  • Ligne 244 | DOUBLON | Doublon supprimé : BA Ibrahima (782259379)
+  • Ligne 247 | DOUBLON | Doublon supprimé : Fall  Coumba (753094235)
+  • Ligne 257 | DOUBLON | Doublon supprimé :  Badiane  Lamine (773545556)
+  • Ligne 263 | DOUBLON | Doublon supprimé : Faye Oumou (782198058)
+  • Ligne 271 | DOUBLON | Doublon supprimé : Kane Alioune (763030966)
+  • Ligne 277 | DOUBLON | Doublon supprimé : Bodian Modou (783851852)
+  • Ligne 278 | DOUBLON | Doublon supprimé : Cisse Ibrahima (758175395)
+  • Ligne 291 | DOUBLON | Doublon supprimé : Faye Aminata (702919136)
+
+───────────────────────────────────────────────────────
+  PATIENTS REJETÉS (82)
+───────────────────────────────────────────────────────
+
+  Patient #6 — Mbodj Serigne
+    → Ligne 7 | TAILLE  | Taille manquante ou N/A
+
+  Patient #10 —  Dione  Seydou
+    → Ligne 11 | ÂGE     | Âge irréaliste (> 120) : 168
+    → Ligne 11 | VILLE   | Ville mal orthographiée ou mal formatée : 'dakar'
+
+  Patient #15 — Badiane Oumou
+    → Ligne 16 | POIDS   | Poids manquant ou N/A
+    → Ligne 16 | TAILLE  | Taille manquante ou N/A
+
+  Patient #16 — DIATTA Oumou
+    → Ligne 17 | VILLE   | Ville mal orthographiée ou mal formatée : 'saint louis'
+    → Ligne 17 | GROUPE  | Groupe sanguin invalide : 'OO+'
+
+  Patient #24 — SOW Ousmane
+    → Ligne 25 | ÂGE     | Âge manquant
+    → Ligne 25 | VILLE   | Ville mal orthographiée ou mal formatée : 'ziguincor'
+
+  Patient #25 — SECK Dieynaba
+    → Ligne 26 | VILLE   | Ville mal orthographiée ou mal formatée : 'saint louis'
+    → Ligne 26 | GROUPE  | Groupe sanguin invalide : 'D-'
+
+  Patient #32 — KOUYATE Modou
+    → Ligne 33 | ÂGE     | Âge manquant
+    → Ligne 33 | GROUPE  | Groupe sanguin invalide : 'CC+'
+
+  Patient #41 — Dione Ndéye
+    → Ligne 42 | ÂGE     | Âge irréaliste (> 120) : 150
+
+  Patient #42 — Badiane Mariam
+    → Ligne 43 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+    → Ligne 43 | GROUPE  | Groupe sanguin invalide : 'BB-'
+
+  Patient #43 — Dieme Mariama
+    → Ligne 44 | POIDS   | Poids non numérique : 'abc'
+
+  Patient #47 — Mbaye Coumba
+    → Ligne 48 | POIDS   | Poids non numérique : 'abc'
+
+  Patient #48 —  Gaye  Dieynaba
+    → Ligne 49 | ÂGE     | Âge négatif : -16
+    → Ligne 49 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+
+  Patient #50 — Ndour Lamine
+    → Ligne 51 | GROUPE  | Groupe sanguin invalide : 'D-'
+
+  Patient #55 — Mendy Dieynaba
+    → Ligne 56 | ÂGE     | Âge irréaliste (> 120) : 126
+
+  Patient #58 — Ndoye Rokhaya
+    → Ligne 59 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+    → Ligne 59 | TAILLE  | Taille non numérique : 'xyz'
+
+  Patient #61 — CAMARA Serigne
+    → Ligne 62 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+    → Ligne 62 | GROUPE  | Groupe sanguin invalide : 'BB-'
+
+  Patient #62 — Bodian Awa
+    → Ligne 63 | ÂGE     | Âge manquant
+    → Ligne 63 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+
+  Patient #63 — Sy Fatoumata
+    → Ligne 64 | GROUPE  | Groupe sanguin invalide : 'O'
+
+  Patient #65 — Diallo Fatou
+    → Ligne 66 | GROUPE  | Groupe sanguin invalide : 'O'
+
+  Patient #66 — Bodian Modou
+    → Ligne 67 | ÂGE     | Âge égal à zéro (suspect) : 0
+
+  Patient #68 — Diatta Oumou
+    → Ligne 69 | GROUPE  | Groupe sanguin invalide : 'P+'
+
+  Patient #70 — Kouyate Fatoumata
+    → Ligne 71 | POIDS   | Poids manquant ou N/A
+    → Ligne 71 | TAILLE  | Taille manquante ou N/A
+
+  Patient #72 —  Badiane  Aminata
+    → Ligne 73 | ÂGE     | Âge manquant
+    → Ligne 73 | VILLE   | Ville mal orthographiée ou mal formatée : 'Kaolak'
+
+  Patient #76 — Ndiaye Saliou
+    → Ligne 77 | TAILLE  | Taille non numérique : 'xyz'
+
+  Patient #82 — DIATTA Khady
+    → Ligne 83 | GROUPE  | Groupe sanguin invalide : 'Z-'
+
+  Patient #86 — Sy Mariama
+    → Ligne 87 | TAILLE  | Taille non numérique : 'xyz'
+
+  Patient #87 — GOUDIABY Adama
+    → Ligne 88 | ÂGE     | Âge manquant
+    → Ligne 88 | VILLE   | Ville mal orthographiée ou mal formatée : 'DIOURBEL'
+    → Ligne 88 | GROUPE  | Groupe sanguin invalide : 'C+'
+
+  Patient #93 — Ndoye Fatou
+    → Ligne 94 | ÂGE     | Âge irréaliste (> 120) : 180
+    → Ligne 94 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+
+  Patient #95 — DEMBELE Oumou
+    → Ligne 96 | VILLE   | Ville mal orthographiée ou mal formatée : 'Lougar'
+    → Ligne 96 | GROUPE  | Groupe sanguin invalide : 'P+'
+
+  Patient #96 — GOMIS Khady
+    → Ligne 97 | VILLE   | Ville mal orthographiée ou mal formatée : 'Kaolak'
+    → Ligne 97 | GROUPE  | Groupe sanguin invalide : 'CC+'
+
+  Patient #103 — Faye Khady
+    → Ligne 104 | TAILLE  | Taille manquante ou N/A
+
+  Patient #104 — DIONE Serigne
+    → Ligne 105 | ÂGE     | Âge manquant
+    → Ligne 105 | GROUPE  | Groupe sanguin invalide : 'A'
+
+  Patient #110 — Toure Omar
+    → Ligne 111 | GROUPE  | Groupe sanguin invalide : 'B'
+
+  Patient #112 — Tendeng Seydou
+    → Ligne 113 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+    → Ligne 113 | POIDS   | Poids manquant ou N/A
+
+  Patient #116 — Seck Kadiatou
+    → Ligne 117 | TAILLE  | Taille non numérique : 'xyz'
+
+  Patient #118 — Diallo Babacar
+    → Ligne 119 | GROUPE  | Groupe sanguin invalide : 'O'
+
+  Patient #120 — Fall Mariama
+    → Ligne 121 | ÂGE     | Âge égal à zéro (suspect) : 0
+
+  Patient #121 — SARR Kadiatou
+    → Ligne 122 | GROUPE  | Groupe sanguin invalide : 'AB'
+
+  Patient #133 — Ba Omar
+    → Ligne 134 | ÂGE     | Âge irréaliste (> 120) : 130
+
+  Patient #141 — Badiane Modou
+    → Ligne 142 | ÂGE     | Âge irréaliste (> 120) : 125
+
+  Patient #144 — Seck Fatoumata
+    → Ligne 145 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+    → Ligne 145 | POIDS   | Poids manquant ou N/A
+
+  Patient #145 — BA Cheikh
+    → Ligne 146 | ÂGE     | Âge manquant
+    → Ligne 146 | VILLE   | Ville mal orthographiée ou mal formatée : 'Saint louis'
+    → Ligne 146 | GROUPE  | Groupe sanguin invalide : 'CC+'
+
+  Patient #147 — Diouf Boubacar
+    → Ligne 148 | GROUPE  | Groupe sanguin invalide : 'AB'
+
+  Patient #149 — GOUDIABY Lamine
+    → Ligne 150 | GROUPE  | Groupe sanguin invalide : 'B'
+
+  Patient #156 — BALDE Lamine
+    → Ligne 157 | VILLE   | Ville mal orthographiée ou mal formatée : 'Kaolak'
+    → Ligne 157 | GROUPE  | Groupe sanguin invalide : 'Z-'
+
+  Patient #158 — Mendy Lamine
+    → Ligne 159 | ÂGE     | Âge irréaliste (> 120) : 130
+
+  Patient #163 — Ba Ibrahima
+    → Ligne 164 | POIDS   | Poids non numérique : 'abc'
+
+  Patient #167 — Thiaw Rokhaya
+    → Ligne 168 | ÂGE     | Âge irréaliste (> 120) : 172
+
+  Patient #171 — Coly Fatou
+    → Ligne 172 | ÂGE     | Âge manquant
+
+  Patient #172 — Sambou Yacine
+    → Ligne 173 | TAILLE  | Taille manquante ou N/A
+
+  Patient #180 — Seck Aminata
+    → Ligne 181 | TAILLE  | Taille non numérique : 'xyz'
+
+  Patient #181 — Kouyate Kadiatou
+    → Ligne 182 | ÂGE     | Âge égal à zéro (suspect) : 0
+
+  Patient #182 — NDIAYE Thierno
+    → Ligne 183 | ÂGE     | Âge manquant
+    → Ligne 183 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+
+  Patient #184 — Cisse Yacine
+    → Ligne 185 | GROUPE  | Groupe sanguin invalide : 'AA+'
+
+  Patient #189 — Thiaw Marieme
+    → Ligne 190 | ÂGE     | Âge égal à zéro (suspect) : 0
+
+  Patient #192 — Sow Dieynaba
+    → Ligne 193 | POIDS   | Poids manquant ou N/A
+
+  Patient #197 — Sambou  Babacar
+    → Ligne 198 | ÂGE     | Âge manquant
+    → Ligne 198 | VILLE   | Ville mal orthographiée ou mal formatée : 'LOUGA'
+    → Ligne 198 | GROUPE  | Groupe sanguin invalide : 'A'
+
+  Patient #201 — Ndour Abdou
+    → Ligne 202 | ÂGE     | Âge irréaliste (> 120) : 145
+
+  Patient #204 — Sonko Alioune
+    → Ligne 205 | GROUPE  | Groupe sanguin invalide : 'B'
+
+  Patient #207 — Diatta Khady
+    → Ligne 208 | ÂGE     | Âge irréaliste (> 120) : 200
+    → Ligne 208 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+
+  Patient #213 — Coly Mariam
+    → Ligne 214 | ÂGE     | Âge égal à zéro (suspect) : 0
+
+  Patient #216 — Seck Modou
+    → Ligne 217 | POIDS   | Poids non numérique : 'abc'
+
+  Patient #217 — Gaye Moussa
+    → Ligne 218 | TAILLE  | Taille non numérique : 'xyz'
+
+  Patient #221 — Sambou Serigne
+    → Ligne 222 | GROUPE  | Groupe sanguin invalide : 'OO+'
+
+  Patient #222 — KOUYATE Babacar
+    → Ligne 223 | VILLE   | Ville mal orthographiée ou mal formatée : 'Saint louis'
+    → Ligne 223 | GROUPE  | Groupe sanguin invalide : 'P+'
+
+  Patient #229 — Gomis Alpha
+    → Ligne 230 | GROUPE  | Groupe sanguin invalide : 'C+'
+
+  Patient #232 — Balde Rokhaya
+    → Ligne 233 | POIDS   | Poids manquant ou N/A
+    → Ligne 233 | TAILLE  | Taille manquante ou N/A
+
+  Patient #234 — SONKO Cheikh
+    → Ligne 235 | VILLE   | Ville mal orthographiée ou mal formatée : 'SAINT-LOUIS'
+    → Ligne 235 | GROUPE  | Groupe sanguin invalide : 'OO+'
+
+  Patient #236 — Dione Mariama
+    → Ligne 237 | TAILLE  | Taille manquante ou N/A
+
+  Patient #239 — Tendeng Modou
+    → Ligne 240 | ÂGE     | Âge irréaliste (> 120) : 999
+
+  Patient #249 — BASSENE Cheikh
+    → Ligne 250 | ÂGE     | Âge manquant
+
+  Patient #252 — Ndour Fatou
+    → Ligne 253 | ÂGE     | Âge négatif : -3
+    → Ligne 253 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+
+  Patient #255 — Sonko  Aissatou
+    → Ligne 256 | ÂGE     | Âge manquant
+    → Ligne 256 | VILLE   | Ville mal orthographiée ou mal formatée : 'Kaolak'
+    → Ligne 256 | GROUPE  | Groupe sanguin invalide : 'D-'
+
+  Patient #258 — Diatta Marieme
+    → Ligne 259 | ÂGE     | Âge négatif : -12
+
+  Patient #261 — Mbodj Oumou
+    → Ligne 262 | GROUPE  | Groupe sanguin invalide : '++A'
+
+  Patient #274 — Mendy Serigne
+    → Ligne 275 | GROUPE  | Groupe sanguin invalide : 'BB-'
+
+  Patient #275 — Ba Moussa
+    → Ligne 276 | GROUPE  | Groupe sanguin invalide : 'O'
+
+  Patient #278 — Sambou Serigne
+    → Ligne 279 | ÂGE     | Âge manquant
+
+  Patient #280 — Badiane Aminata
+    → Ligne 281 | GROUPE  | Groupe sanguin invalide : 'AB'
+
+  Patient #281 — Cisse Marieme
+    → Ligne 282 | POIDS   | Poids manquant ou N/A
+
+  Patient #292 — Coulibaly Oumou
+    → Ligne 293 | ÂGE     | Âge négatif : -15
+
+  Patient #297 — Sy Fatou
+    → Ligne 298 | TAILLE  | Taille manquante ou N/A
+
+=======================================================
+  Fin du rapport
+=======================================================
