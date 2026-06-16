@@ -7,43 +7,10 @@ Etudiant 2 — Projet Python 1 : Prétraitement de Données Médicales
 import re
 
 # ─────────────────────────────────────────────
-#  Constantes
+#  Constantes (Partagées avec validation.py)
 # ─────────────────────────────────────────────
+from validation import CORRECTIONS_VILLES, GROUPES_SANGUINS_VALIDES
 
-GROUPES_SANGUINS_VALIDES = {"A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"}
-
-CORRECTIONS_VILLES = {
-    "dakar":        "Dakar",
-    "dakarr":       "Dakar",
-    "thies":        "Thiès",
-    "thiès":        "Thiès",
-    "saint louis":  "Saint-Louis",
-    "saint-louis":  "Saint-Louis",
-    "ziguinchor":   "Ziguinchor",
-    "ziginchor":    "Ziguinchor",
-    "ziguincor":    "Ziguinchor",
-    "tambacounda":  "Tambacounda",
-    "tamba":        "Tambacounda",
-    "louga":        "Louga",
-    "kaolack":      "Kaolack",
-    "kaolak":       "Kaolack",
-    "diourbel":     "Diourbel",
-    "diorbel":      "Diourbel",
-    "kolda":        "Kolda",
-    "matam":        "Matam",
-    "fatick":       "Fatick",
-    "kaffrine":     "Kaffrine",
-    "kedougou":     "Kédougou",
-    "kédougou":     "Kédougou",
-    "sedhiou":      "Sédhiou",
-    "sédhiou":      "Sédhiou",
-}
-
-
-# ─────────────────────────────────────────────
-#  Utilitaire : capitalisation respectant les tirets
-#  Ex: "saint-louis" → "Saint-Louis"  (et non "Saint-louis" avec .title())
-# ─────────────────────────────────────────────
 
 def _capitaliser(texte):
     """
@@ -385,7 +352,33 @@ def nettoyer_patient(patient_brut):
 #  8.Gestion des doublons
 # ─────────────────────────────────────────────
 
+def supprimer_doublons(patients_valides):
+    """
+    Supprime les doublons d'une liste de patients nettoyés.
+    Deux patients sont considérés comme doublons s'ils ont les mêmes 
+    nom, prénom et numéro de téléphone. En cas de doublon, on conserve 
+    la première occurrence rencontrée.
+    
+    Retourne (liste_patients_uniques, liste_doublons_detectes).
+    """
+    patients_uniques = []
+    les_doublons = []  # <--- CHANGEMENT : On stocke les dictionnaires des doublons ici
+    cles_existantes = set()
 
+    for patient in patients_valides:
+        nom_cle = str(patient.get("nom", "")).strip().lower()
+        prenom_cle = str(patient.get("prenom", "")).strip().lower()
+        tel_cle = str(patient.get("telephone", "")).strip()
+        
+        cle_unique = (nom_cle, prenom_cle, tel_cle)
+
+        if cle_unique in cles_existantes:
+            les_doublons.append(patient)  # <--- CHANGEMENT : On garde le patient doublon
+        else:
+            cles_existantes.add(cle_unique)
+            patients_uniques.append(patient)
+
+    return patients_uniques, les_doublons  # <--- CHANGEMENT : On retourne la liste
 
 
 # ─────────────────────────────────────────────
@@ -394,13 +387,8 @@ def nettoyer_patient(patient_brut):
 
 def nettoyer_tous_les_patients(patients_bruts):
     """
-    Nettoie tous les patients et retourne :
-    {
-        "patients_valides":  [...],
-        "patients_rejetes":  [...],
-        "toutes_anomalies":  [...],
-        "nb_doublons":       int,
-    }
+    Nettoie tous les patients et retourne un dictionnaire compatible
+    avec export.py et statistiques.py.
     """
     valides_avant_dedup = []
     rejetes = []
@@ -416,7 +404,10 @@ def nettoyer_tous_les_patients(patients_bruts):
         else:
             rejetes.append({"patient": p, "erreurs": erreurs})
 
-    valides, nb_doublons = supprimer_doublons(valides_avant_dedup)
+    # <--- CHANGEMENT : On récupère la liste des doublons
+    valides, liste_doublons = supprimer_doublons(valides_avant_dedup)
+    nb_doublons = len(liste_doublons)  # <--- CHANGEMENT : On compte combien il y en a
+    
     if nb_doublons > 0:
         anomalies.append(
             f"[DOUBLONS] {nb_doublons} doublon(s) supprimé(s)"
@@ -427,10 +418,6 @@ def nettoyer_tous_les_patients(patients_bruts):
         "patients_rejetes": rejetes,
         "toutes_anomalies": anomalies,
         "nb_doublons":      nb_doublons,
-    }
+        "liste_doublons":   liste_doublons  # <--- CHANGEMENT : Transmis pour la collègue !
+    }────────────────────────────────────────────
 
-
-
-
-
- 
