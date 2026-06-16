@@ -349,7 +349,7 @@ def nettoyer_patient(patient_brut):
 
 
 # ─────────────────────────────────────────────
-#  8.Gestion des doublons
+#  8. Gestion des doublons
 # ─────────────────────────────────────────────
 
 def supprimer_doublons(patients_valides):
@@ -362,7 +362,7 @@ def supprimer_doublons(patients_valides):
     Retourne (liste_patients_uniques, liste_doublons_detectes).
     """
     patients_uniques = []
-    les_doublons = []  # <--- CHANGEMENT : On stocke les dictionnaires des doublons ici
+    les_doublons = [] 
     cles_existantes = set()
 
     for patient in patients_valides:
@@ -373,12 +373,13 @@ def supprimer_doublons(patients_valides):
         cle_unique = (nom_cle, prenom_cle, tel_cle)
 
         if cle_unique in cles_existantes:
-            les_doublons.append(patient)  # <--- CHANGEMENT : On garde le patient doublon
+            # On stocke le patient complet
+            les_doublons.append(patient) 
         else:
             cles_existantes.add(cle_unique)
             patients_uniques.append(patient)
 
-    return patients_uniques, les_doublons  # <--- CHANGEMENT : On retourne la liste
+    return patients_uniques, les_doublons
 
 
 # ─────────────────────────────────────────────
@@ -388,7 +389,7 @@ def supprimer_doublons(patients_valides):
 def nettoyer_tous_les_patients(patients_bruts):
     """
     Nettoie tous les patients et retourne un dictionnaire compatible
-    avec export.py et statistiques.py.
+    à 100% avec export.py et les statistiques de la collègue.
     """
     valides_avant_dedup = []
     rejetes = []
@@ -404,20 +405,29 @@ def nettoyer_tous_les_patients(patients_bruts):
         else:
             rejetes.append({"patient": p, "erreurs": erreurs})
 
-    # <--- CHANGEMENT : On récupère la liste des doublons
-    valides, liste_doublons = supprimer_doublons(valides_avant_dedup)
-    nb_doublons = len(liste_doublons)  # <--- CHANGEMENT : On compte combien il y en a
+    # Déduplication
+    valides, les_doublons_dicts = supprimer_doublons(valides_avant_dedup)
+    nb_doublons = len(les_doublons_dicts)
     
     if nb_doublons > 0:
         anomalies.append(
             f"[DOUBLONS] {nb_doublons} doublon(s) supprimé(s)"
         )
 
+    # --- SÉCURITÉ ET COMPATIBILITÉ COLLÈGUE ---
+    # Sa fonction calculer_statistiques(..., doublons) s'attend à recevoir 
+    # une structure mesurable par len() pour faire ses calculs.
+    # On lui génère une liste d'index fictifs pour que son len() fonctionne 
+    # sans jamais provoquer de plantage.
+    liste_doublons_compat = [i for i in range(nb_doublons)]
+
     return {
         "patients_valides": valides,
         "patients_rejetes": rejetes,
         "toutes_anomalies": anomalies,
         "nb_doublons":      nb_doublons,
-        "liste_doublons":   liste_doublons  # <--- CHANGEMENT : Transmis pour la collègue !
-    }────────────────────────────────────────────
-
+        
+        # Cette clé donne EXACTEMENT ce que statistiques.py attend pour faire len() 
+        # sans planter et sans fausser les calculs de totaux !
+        "liste_doublons":   liste_doublons_compat  
+    }
