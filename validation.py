@@ -1,6 +1,6 @@
 # =============================================================
 # validation.py — Détection des anomalies et des doublons
-# Étudiant 1 : Lecture & Vérification
+# Membre1 (Mame Binta Niang) : Lecture & Vérification
 # =============================================================
 
 import re
@@ -34,7 +34,7 @@ CORRECTIONS_VILLES = {
 
 
 # =============================================================
-# FONCTIONS DE VALIDATION INDIVIDUELLE (par champ)
+# FONCTIONS DE VALIDATION INDIVIDUELLE
 # Chaque fonction retourne (valeur_brute_nettoyée, message_erreur_ou_None)
 # =============================================================
 
@@ -72,8 +72,9 @@ def valider_age(valeur):
         anomalie = f"Âge négatif : {age}"
         est_rejetable = True
     elif age == 0:
-        anomalie = f"Âge égal à zéro (suspect) : {age}"
-        est_rejetable = True
+        # Verifions que age egal à 0 est considéré comme suspect
+        anomalie = f"Âge égal à zéro (suspect, mais conservé) : {age}"
+        est_rejetable = False
     elif age > 120:
         anomalie = f"Âge irréaliste (> 120) : {age}"
         est_rejetable = True
@@ -91,20 +92,20 @@ def valider_telephone(valeur):
     est_rejetable = False
     valeur = valeur.strip()
 
-    # Supprimer les espaces et tirets
+    # Supprimons les espaces et tirets
     numero = valeur.replace(" ", "").replace("-", "")
 
-    # Supprimer les préfixes internationaux
+    # Supprimons les préfixes internationaux
     if numero.startswith("00221"):
         numero = numero[5:]
     elif numero.startswith("+221"):
         numero = numero[4:]
 
-    # Vérifier que le numéro ne contient que des chiffres
+    # Vérifions que le numéro  contient que des chiffres
     if not numero.isdigit():
         return None, f"Téléphone non numérique après nettoyage : '{valeur}'", True
 
-    # Vérifier la longueur : doit être exactement 9 chiffres
+    # Vérifieons que la longueur est exactement 9 chiffres
     if len(numero) != 9:
         return None, f"Téléphone invalide (longueur {len(numero)}) : '{valeur}'", True
 
@@ -115,7 +116,7 @@ def valider_telephone(valeur):
     # Détecter les numéros suspects (tous chiffres identiques)
     if len(set(numero)) == 1:
         anomalie = f"Téléphone suspect (chiffres identiques) : '{numero}'"
-        # Ce n'est pas une raison de rejet selon le sujet, juste un avertissement
+        # Qu'on doit considéré comme suspect
 
     return numero, anomalie, est_rejetable
 
@@ -316,7 +317,7 @@ def detecter_doublons(patients):
         ligne = patient.get("_ligne", "?")
 
         if cle in vus:
-            # C'est un doublon
+            
             premier_index = vus[cle]
             premier_ligne = patients[premier_index].get("_ligne", "?")
             indices_doublons.append(i)

@@ -8,15 +8,15 @@ projet_python/
 │   ├── patients_bruts.txt       ← fichier d'entrée (fourni)
 │   └── patients_propres.csv     ← généré après export
 ├── src/
-│   ├── main.py          ← menu principal (les deux étudiants)
-│   ├── chargement.py    ← lecture du fichier brut       (Étudiant 1)
-│   ├── validation.py    ← détection anomalies/doublons  (Étudiant 1)
-│   ├── statistiques.py  ← calculs et statistiques       (Étudiant 1)
-│   ├── nettoyage.py     ← correction des erreurs        (Étudiant 2)
-│   └── export.py        ← écriture CSV et rapport       (Étudiant 2)
+│   ├── main.py          ← menu principal (Fait en binome)
+│   ├── chargement.py    ← lecture du fichier brut       (Mame Binta Niang)
+│   ├── validation.py    ← détection anomalies/doublons  (Mame Binta Niang)
+│   ├── statistiques.py  ← calculs et statistiques       (Mame Binta Niang)
+│   ├── nettoyage.py     ← correction des erreurs        (Ababacar Sedikh Gueye)
+│   └── export.py        ← écriture CSV et rapport       (Ababacar Sedikh Gueye)
 ├── rapport/
 │   └── rapport.txt      ← généré après export
-└── README.md
+└── README.md (Fait en binome)
 ```
 
 ## Lancement

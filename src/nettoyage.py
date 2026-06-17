@@ -390,56 +390,106 @@ def supprimer_doublons(patients_valides):
 
 def nettoyer_tous_les_patients(patients_bruts):
     """
-    Fonction maîtresse qui orchestre la validation, la séparation
-    des rejets, l'application des corrections et le dédoublonnage.
+    Fonction maîtresse qui orchestre la validation, l'application
+    RÉELLE des fonctions de nettoyage par champ, la séparation
+    des rejets et le dédoublonnage.
+
+    CORRECTION : cette fonction appelle désormais nettoyer_nom,
+    nettoyer_telephone, nettoyer_ville, nettoyer_groupe_sanguin,
+    nettoyer_poids et nettoyer_taille (au lieu de copier les valeurs
+    brutes). C'est ce qui garantit que patients_propres.csv contient
+    bien des noms en format titre et des téléphones au format
+    7XXXXXXXX, comme l'exige le sujet.
     """
     valides_avant_dedup = []
     rejetes = []
     anomalies_globales = []
-    
+
     for p in patients_bruts:
-        # 1. Appel de TA fonction de validation (située dans validation.py)
+        # 1. Appel de la fonction de validation (validation.py) qui décide
+        #    si le patient doit être rejeté (anomalies grave :
+        #    groupe sanguin invalide, âge impossible, tél invalide, etc.)
         anomalies_patient, est_valide = valider_patient(p)
-        
+
         if not est_valide:
-            # Le patient possède une anomalie rédhibitoire (ex: ++A, Z-, âge négatif) -> REJET
+            # Anomalie serieuse -> REJET, on garde le patient brut
+            # tel quel dans le rapport des rejetés (rien à nettoyer ici)
             rejetes.append({
                 "patient": p,
                 "erreurs": anomalies_patient if anomalies_patient else ["Données critiques invalides"]
             })
-            # On stocke ces anomalies pour le rapport.txt
             anomalies_globales.extend(anomalies_patient)
-        else:
-            # Le patient est médicalement acceptable -> On applique un léger nettoyage de texte
-            p_propre = p.copy()
-            
-            # Harmonisation de la casse pour la ville
-            ville_brute = str(p_propre.get("ville", "")).strip().lower()
-            if ville_brute in CORRECTIONS_VILLES:
-                p_propre["ville"] = CORRECTIONS_VILLES[ville_brute]
-            else:
-                p_propre["ville"] = p_propre["ville"].strip().capitalize()
-                
-            # Nettoyage cosmétique du groupe sanguin (mise en majuscule)
-            p_propre["groupe_sanguin"] = str(p_propre.get("groupe_sanguin", "")).strip().upper()
-            
-            # S'il y avait de petites anomalies non-rejetables (ex: téléphone suspect mais lisible)
-            if anomalies_patient:
-                anomalies_globales.extend(anomalies_patient)
-                
-            valides_avant_dedup.append(p_propre)
+            continue
 
-    # 2. Application de ton dédoublonnage sur les patients médicalement valides
+        # 2. # 2. Pour les patient valide : on applique le vrai nettoyage par champ
+        # (et on garde les anomalies non-rejet détectées, sauf la ville déjà 
+        #signalée plus bas par nettoyer_ville).
+      
+        anomalies_globales.extend([a for a in anomalies_patient if "| VILLE " not in a])
+
+        p_propre = {"id": p.get("id", "?"), "_ligne": p.get("_ligne", "?")}
+
+        nom, err_nom = nettoyer_nom(p.get("nom", ""))
+        p_propre["nom"] = nom
+        anomalies_globales.extend([f"Ligne {p.get('_ligne','?')} | NOM     | {e}" for e in err_nom])
+
+        prenom, err_prenom = nettoyer_nom(p.get("prenom", ""))
+        p_propre["prenom"] = prenom
+        anomalies_globales.extend([f"Ligne {p.get('_ligne','?')} | PRÉNOM  | {e}" for e in err_prenom])
+
+        # Mettre l'age en int
+        try:
+            p_propre["age"] = int(str(p.get("age", "")).strip())
+        except ValueError:
+            p_propre["age"] = None
+
+        tel, err_tel = nettoyer_telephone(p.get("telephone", ""))
+        p_propre["telephone"] = tel
+        anomalies_globales.extend([f"Ligne {p.get('_ligne','?')} | TÉL     | {e}" for e in err_tel])
+
+        ville, err_ville = nettoyer_ville(p.get("ville", ""))
+        p_propre["ville"] = ville
+        anomalies_globales.extend([f"Ligne {p.get('_ligne','?')} | VILLE   | {e}" for e in err_ville])
+
+        groupe, err_groupe = nettoyer_groupe_sanguin(p.get("groupe_sanguin", ""))
+        p_propre["groupe_sanguin"] = groupe
+        anomalies_globales.extend([f"Ligne {p.get('_ligne','?')} | GROUPE  | {e}" for e in err_groupe])
+
+        poids, err_poids = nettoyer_poids(p.get("poids", ""))
+        p_propre["poids"] = poids
+        anomalies_globales.extend([f"Ligne {p.get('_ligne','?')} | POIDS   | {e}" for e in err_poids])
+
+        taille, err_taille = nettoyer_taille(p.get("taille", ""))
+        p_propre["taille"] = taille
+        anomalies_globales.extend([f"Ligne {p.get('_ligne','?')} | TAILLE  | {e}" for e in err_taille])
+
+        
+        champs_invalides = [
+            c for c, v in {
+                "nom": nom, "prenom": prenom, "telephone": tel,
+                "groupe_sanguin": groupe, "poids": poids, "taille": taille,
+            }.items() if v is None
+        ]
+        if champs_invalides:
+            rejetes.append({
+                "patient": p,
+                "erreurs": [f"[REJET après nettoyage] Champs invalides : {', '.join(champs_invalides)}"]
+            })
+            continue
+
+        valides_avant_dedup.append(p_propre)
+
+    # 3 verification des dedoublonnage
     valides_finals, les_doublons_trouves = supprimer_doublons(valides_avant_dedup)
-    
-    # 3. Enregistrement des anomalies de doublons
+
+    # 4. Enregistrement des anomalies de doublons
     for d in les_doublons_trouves:
         nom_d = d.get("nom", "Inconnu")
         prenom_d = d.get("prenom", "")
         tel_d = d.get("telephone", "N/A")
         anomalies_globales.append(f"Ligne {d.get('_ligne', '?')} | DOUBLON | Doublon supprimé : {nom_d} {prenom_d} ({tel_d})")
 
-    # 4. Renvoi du dictionnaire complet attendu par main.py
+    # 5. Renvoi du dictionnaire complet attendu par le menu principal (main)
     return {
         "patients_valides": valides_finals,
         "patients_rejetes": rejetes,

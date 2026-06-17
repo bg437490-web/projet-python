@@ -1,253 +1,373 @@
 =======================================================
    RAPPORT DE NETTOYAGE — DONNÉES MÉDICALES PATIENTS
 =======================================================
-  Généré le : 16/06/2026 à 19:01:49
+  Généré le : 17/06/2026 à 08:42:43
 =======================================================
 
 ───────────────────────────────────────────────────────
   RÉSUMÉ GÉNÉRAL
 ───────────────────────────────────────────────────────
   Lignes lues dans le fichier brut  : 300
-  Patients valides après nettoyage  : 196
-  Doublons supprimés                : 22
-  Patients rejetés                  : 82
+  Patients valides après nettoyage  : 191
+  Doublons supprimés                : 32
+  Patients rejetés                  : 77
 
 ───────────────────────────────────────────────────────
   STATISTIQUES SUR LES PATIENTS VALIDES
 ───────────────────────────────────────────────────────
-  Moyenne des âges        : 47.5 ans
-  Moyenne des poids       : 80.6 kg
+  Moyenne des âges        : 46.34 ans
+  Moyenne des poids       : 80.95 kg
   Ville la plus fréquente : Louga
 
   Répartition des groupes sanguins :
-    A+    : 20 patient(s)
-    A-    : 22 patient(s)
-    AB+   : 29 patient(s)
-    AB-   : 26 patient(s)
-    B+    : 26 patient(s)
-    B-    : 28 patient(s)
-    O+    : 17 patient(s)
-    O-    : 28 patient(s)
+    A+    : 21 patient(s)
+    A-    : 23 patient(s)
+    AB+   : 28 patient(s)
+    AB-   : 25 patient(s)
+    B+    : 25 patient(s)
+    B-    : 24 patient(s)
+    O+    : 16 patient(s)
+    O-    : 29 patient(s)
 
 ───────────────────────────────────────────────────────
-  ANOMALIES DÉTECTÉES (213 au total)
+  ANOMALIES DÉTECTÉES (333 au total)
 ───────────────────────────────────────────────────────
-  • Ligne 2 | VILLE   | Ville mal orthographiée ou mal formatée : 'Kaolak'
+  • Ligne 2 | VILLE   | Ville corrigée : 'Kaolak' → 'Kaolack'
+  • Ligne 6 | TÉL     | Espaces/tirets supprimés dans '76 947-9356'
   • Ligne 7 | TAILLE  | Taille manquante ou N/A
-  • Ligne 9 | VILLE   | Ville mal orthographiée ou mal formatée : 'TAMBACOUNDA'
+  • Ligne 8 | NOM     | Nom entièrement en minuscules : 'ba'
+  • Ligne 8 | PRÉNOM  | Nom entièrement en minuscules : 'ibrahima'
+  • Ligne 9 | NOM     | Nom entièrement en minuscules : 'toure'
+  • Ligne 9 | VILLE   | Ville corrigée : 'TAMBACOUNDA' → 'Tambacounda'
   • Ligne 11 | ÂGE     | Âge irréaliste (> 120) : 168
   • Ligne 11 | VILLE   | Ville mal orthographiée ou mal formatée : 'dakar'
-  • Ligne 15 | VILLE   | Ville mal orthographiée ou mal formatée : 'diorbel'
+  • Ligne 12 | NOM     | Nom entièrement en majuscules : 'KANE'
+  • Ligne 12 | PRÉNOM  | Nom entièrement en majuscules : 'OMAR'
+  • Ligne 15 | NOM     | Nom entièrement en majuscules : 'KANE'
+  • Ligne 15 | TÉL     | Espaces/tirets supprimés dans '76-408-88-69'
+  • Ligne 15 | VILLE   | Ville corrigée : 'diorbel' → 'Diourbel'
   • Ligne 16 | POIDS   | Poids manquant ou N/A
   • Ligne 16 | TAILLE  | Taille manquante ou N/A
   • Ligne 17 | VILLE   | Ville mal orthographiée ou mal formatée : 'saint louis'
   • Ligne 17 | GROUPE  | Groupe sanguin invalide : 'OO+'
-  • Ligne 22 | VILLE   | Ville mal orthographiée ou mal formatée : 'thies'
+  • Ligne 18 | NOM     | Nom entièrement en minuscules : 'sow'
+  • Ligne 18 | PRÉNOM  | Nom entièrement en majuscules : 'OUSMANE'
+  • Ligne 20 | NOM     | Nom entièrement en majuscules : 'FAYE'
+  • Ligne 20 | PRÉNOM  | Nom entièrement en minuscules : 'aminata'
+  • Ligne 22 | NOM     | Nom entièrement en majuscules : 'FALL'
+  • Ligne 22 | TÉL     | Préfixe '00221' supprimé de '00221765043346'
+  • Ligne 22 | VILLE   | Ville corrigée : 'thies' → 'Thiès'
+  • Ligne 24 | NOM     | Nom entièrement en minuscules : 'gaye'
   • Ligne 25 | ÂGE     | Âge manquant
   • Ligne 25 | VILLE   | Ville mal orthographiée ou mal formatée : 'ziguincor'
   • Ligne 26 | VILLE   | Ville mal orthographiée ou mal formatée : 'saint louis'
   • Ligne 26 | GROUPE  | Groupe sanguin invalide : 'D-'
-  • Ligne 27 | VILLE   | Ville mal orthographiée ou mal formatée : 'Tamba'
+  • Ligne 27 | VILLE   | Ville corrigée : 'Tamba' → 'Tambacounda'
+  • Ligne 30 | TÉL     | Espaces/tirets supprimés dans '70-581-39-94'
+  • Ligne 32 | NOM     | Nom entièrement en majuscules : 'TRAORE'
+  • Ligne 32 | PRÉNOM  | Nom entièrement en majuscules : 'BOUBACAR'
   • Ligne 33 | ÂGE     | Âge manquant
   • Ligne 33 | GROUPE  | Groupe sanguin invalide : 'CC+'
-  • Ligne 34 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
-  • Ligne 39 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
-  • Ligne 41 | VILLE   | Ville mal orthographiée ou mal formatée : 'THIÈS'
+  • Ligne 34 | VILLE   | Ville corrigée : 'Thies' → 'Thiès'
+  • Ligne 37 | TÉL     | Espaces/tirets supprimés dans '76 121-2267'
+  • Ligne 39 | VILLE   | Ville corrigée : 'Thies' → 'Thiès'
+  • Ligne 41 | NOM     | Nom entièrement en majuscules : 'DIEME'
+  • Ligne 41 | TÉL     | Espaces/tirets supprimés dans '70 414-2605'
+  • Ligne 41 | VILLE   | Ville corrigée : 'THIÈS' → 'Thiès'
   • Ligne 42 | ÂGE     | Âge irréaliste (> 120) : 150
   • Ligne 43 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
   • Ligne 43 | GROUPE  | Groupe sanguin invalide : 'BB-'
   • Ligne 44 | POIDS   | Poids non numérique : 'abc'
-  • Ligne 45 | VILLE   | Ville mal orthographiée ou mal formatée : 'saint-louis'
-  • Ligne 47 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 45 | NOM     | Nom entièrement en majuscules : 'FALL'
+  • Ligne 45 | VILLE   | Ville corrigée : 'saint-louis' → 'Saint-Louis'
+  • Ligne 47 | TÉL     | Espaces/tirets supprimés dans '70 668-8338'
+  • Ligne 47 | VILLE   | Ville corrigée : 'Thies' → 'Thiès'
   • Ligne 48 | POIDS   | Poids non numérique : 'abc'
   • Ligne 49 | ÂGE     | Âge négatif : -16
   • Ligne 49 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
   • Ligne 51 | GROUPE  | Groupe sanguin invalide : 'D-'
-  • Ligne 52 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
-  • Ligne 53 | VILLE   | Ville mal orthographiée ou mal formatée : 'thiès'
-  • Ligne 55 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 52 | VILLE   | Ville corrigée : 'Thies' → 'Thiès'
+  • Ligne 53 | NOM     | Nom entièrement en majuscules : 'SAMBOU'
+  • Ligne 53 | VILLE   | Ville corrigée : 'thiès' → 'Thiès'
+  • Ligne 55 | TÉL     | Préfixe '00221' supprimé de '00221752010496'
+  • Ligne 55 | VILLE   | Ville corrigée : 'Thies' → 'Thiès'
   • Ligne 56 | ÂGE     | Âge irréaliste (> 120) : 126
   • Ligne 59 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
   • Ligne 59 | TAILLE  | Taille non numérique : 'xyz'
+  • Ligne 61 | TÉL     | Espaces/tirets supprimés dans '77 796-0328'
   • Ligne 62 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
   • Ligne 62 | GROUPE  | Groupe sanguin invalide : 'BB-'
   • Ligne 63 | ÂGE     | Âge manquant
   • Ligne 63 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
   • Ligne 64 | GROUPE  | Groupe sanguin invalide : 'O'
   • Ligne 66 | GROUPE  | Groupe sanguin invalide : 'O'
-  • Ligne 67 | ÂGE     | Âge égal à zéro (suspect) : 0
+  • Ligne 67 | ÂGE     | Âge égal à zéro (suspect, mais conservé) : 0
   • Ligne 69 | GROUPE  | Groupe sanguin invalide : 'P+'
-  • Ligne 70 | VILLE   | Ville mal orthographiée ou mal formatée : 'ZIGUINCHOR'
+  • Ligne 70 | VILLE   | Ville corrigée : 'ZIGUINCHOR' → 'Ziguinchor'
   • Ligne 71 | POIDS   | Poids manquant ou N/A
   • Ligne 71 | TAILLE  | Taille manquante ou N/A
-  • Ligne 72 | VILLE   | Ville mal orthographiée ou mal formatée : 'Ziginchor'
+  • Ligne 72 | VILLE   | Ville corrigée : 'Ziginchor' → 'Ziguinchor'
   • Ligne 73 | ÂGE     | Âge manquant
   • Ligne 73 | VILLE   | Ville mal orthographiée ou mal formatée : 'Kaolak'
-  • Ligne 75 | VILLE   | Ville mal orthographiée ou mal formatée : 'ziguinchor'
+  • Ligne 74 | TÉL     | Espaces/tirets supprimés dans '77 603-8571'
+  • Ligne 75 | VILLE   | Ville corrigée : 'ziguinchor' → 'Ziguinchor'
   • Ligne 77 | TAILLE  | Taille non numérique : 'xyz'
-  • Ligne 78 | VILLE   | Ville mal orthographiée ou mal formatée : 'tambacounda'
+  • Ligne 78 | VILLE   | Espaces inutiles dans la ville 'tambacounda '
+  • Ligne 78 | VILLE   | Ville corrigée : 'tambacounda' → 'Tambacounda'
+  • Ligne 79 | VILLE   | Espaces inutiles dans la ville 'Kaolack '
+  • Ligne 80 | VILLE   | Espaces inutiles dans la ville ' Louga'
   • Ligne 83 | GROUPE  | Groupe sanguin invalide : 'Z-'
-  • Ligne 85 | VILLE   | Ville mal orthographiée ou mal formatée : 'Lougar'
-  • Ligne 86 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 85 | VILLE   | Ville corrigée : 'Lougar' → 'Louga'
+  • Ligne 86 | VILLE   | Ville corrigée : 'Thies' → 'Thiès'
   • Ligne 87 | TAILLE  | Taille non numérique : 'xyz'
   • Ligne 88 | ÂGE     | Âge manquant
   • Ligne 88 | VILLE   | Ville mal orthographiée ou mal formatée : 'DIOURBEL'
   • Ligne 88 | GROUPE  | Groupe sanguin invalide : 'C+'
-  • Ligne 89 | VILLE   | Ville mal orthographiée ou mal formatée : 'Lougar'
-  • Ligne 90 | VILLE   | Ville mal orthographiée ou mal formatée : 'Diorbel'
-  • Ligne 91 | VILLE   | Ville mal orthographiée ou mal formatée : 'louga'
-  • Ligne 92 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
-  • Ligne 93 | VILLE   | Ville mal orthographiée ou mal formatée : 'Saint Louis'
+  • Ligne 89 | VILLE   | Ville corrigée : 'Lougar' → 'Louga'
+  • Ligne 90 | VILLE   | Ville corrigée : 'Diorbel' → 'Diourbel'
+  • Ligne 91 | NOM     | Nom entièrement en majuscules : 'BADJI'
+  • Ligne 91 | TÉL     | Espaces/tirets supprimés dans '75 778-5090'
+  • Ligne 91 | VILLE   | Ville corrigée : 'louga' → 'Louga'
+  • Ligne 92 | NOM     | Nom entièrement en majuscules : 'TENDENG'
+  • Ligne 92 | PRÉNOM  | Nom entièrement en majuscules : 'AISSATOU'
+  • Ligne 92 | VILLE   | Ville corrigée : 'Thies' → 'Thiès'
+  • Ligne 93 | NOM     | Nom entièrement en majuscules : 'SAMBOU'
+  • Ligne 93 | TÉL     | Espaces/tirets supprimés dans '77 901 19 40'
+  • Ligne 93 | VILLE   | Ville corrigée : 'Saint Louis' → 'Saint-Louis'
   • Ligne 94 | ÂGE     | Âge irréaliste (> 120) : 180
   • Ligne 94 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
-  • Ligne 95 | VILLE   | Ville mal orthographiée ou mal formatée : 'SAINT-LOUIS'
+  • Ligne 95 | NOM     | Nom entièrement en majuscules : 'BODIAN'
+  • Ligne 95 | VILLE   | Ville corrigée : 'SAINT-LOUIS' → 'Saint-Louis'
   • Ligne 96 | VILLE   | Ville mal orthographiée ou mal formatée : 'Lougar'
   • Ligne 96 | GROUPE  | Groupe sanguin invalide : 'P+'
   • Ligne 97 | VILLE   | Ville mal orthographiée ou mal formatée : 'Kaolak'
   • Ligne 97 | GROUPE  | Groupe sanguin invalide : 'CC+'
-  • Ligne 99 | VILLE   | Ville mal orthographiée ou mal formatée : 'kaolack'
+  • Ligne 99 | NOM     | Nom entièrement en minuscules : 'sy'
+  • Ligne 99 | VILLE   | Ville corrigée : 'kaolack' → 'Kaolack'
+  • Ligne 101 | TÉL     | Espaces/tirets supprimés dans '70 183-0167'
   • Ligne 104 | TAILLE  | Taille manquante ou N/A
   • Ligne 105 | ÂGE     | Âge manquant
   • Ligne 105 | GROUPE  | Groupe sanguin invalide : 'A'
-  • Ligne 108 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
-  • Ligne 109 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
-  • Ligne 110 | VILLE   | Ville mal orthographiée ou mal formatée : 'Diorbel'
+  • Ligne 106 | VILLE   | Espaces inutiles dans la ville ' Kaolack'
+  • Ligne 108 | VILLE   | Ville corrigée : 'Thies' → 'Thiès'
+  • Ligne 109 | VILLE   | Ville corrigée : 'Thies' → 'Thiès'
+  • Ligne 110 | NOM     | Nom entièrement en majuscules : 'SECK'
+  • Ligne 110 | VILLE   | Ville corrigée : 'Diorbel' → 'Diourbel'
   • Ligne 111 | GROUPE  | Groupe sanguin invalide : 'B'
+  • Ligne 112 | NOM     | Nom entièrement en minuscules : 'goudiaby'
   • Ligne 113 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
   • Ligne 113 | POIDS   | Poids manquant ou N/A
-  • Ligne 116 | VILLE   | Ville mal orthographiée ou mal formatée : 'saint-louis'
+  • Ligne 116 | VILLE   | Ville corrigée : 'saint-louis' → 'Saint-Louis'
   • Ligne 117 | TAILLE  | Taille non numérique : 'xyz'
-  • Ligne 118 | VILLE   | Ville mal orthographiée ou mal formatée : 'Diorbel'
+  • Ligne 118 | NOM     | Nom entièrement en minuscules : 'ndour'
+  • Ligne 118 | VILLE   | Ville corrigée : 'Diorbel' → 'Diourbel'
   • Ligne 119 | GROUPE  | Groupe sanguin invalide : 'O'
-  • Ligne 121 | ÂGE     | Âge égal à zéro (suspect) : 0
+  • Ligne 121 | ÂGE     | Âge égal à zéro (suspect, mais conservé) : 0
   • Ligne 122 | GROUPE  | Groupe sanguin invalide : 'AB'
-  • Ligne 132 | VILLE   | Ville mal orthographiée ou mal formatée : 'tambacounda'
+  • Ligne 125 | TÉL     | Espaces/tirets supprimés dans '70 189 35 02'
+  • Ligne 125 | VILLE   | Espaces inutiles dans la ville ' Louga'
+  • Ligne 127 | TÉL     | Espaces/tirets supprimés dans '75-994-88-24'
+  • Ligne 132 | VILLE   | Espaces inutiles dans la ville 'tambacounda '
+  • Ligne 132 | VILLE   | Ville corrigée : 'tambacounda' → 'Tambacounda'
   • Ligne 134 | ÂGE     | Âge irréaliste (> 120) : 130
-  • Ligne 137 | VILLE   | Ville mal orthographiée ou mal formatée : 'THIES'
-  • Ligne 138 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
-  • Ligne 139 | VILLE   | Ville mal orthographiée ou mal formatée : 'kaolak'
+  • Ligne 136 | NOM     | Nom entièrement en majuscules : 'MBODJ'
+  • Ligne 136 | PRÉNOM  | Nom entièrement en minuscules : 'serigne'
+  • Ligne 137 | VILLE   | Ville corrigée : 'THIES' → 'Thiès'
+  • Ligne 138 | VILLE   | Ville corrigée : 'Thies' → 'Thiès'
+  • Ligne 139 | VILLE   | Ville corrigée : 'kaolak' → 'Kaolack'
+  • Ligne 140 | TÉL     | Préfixe '00221' supprimé de '00221763484601'
   • Ligne 142 | ÂGE     | Âge irréaliste (> 120) : 125
+  • Ligne 143 | NOM     | Nom entièrement en minuscules : 'diop'
+  • Ligne 143 | PRÉNOM  | Nom entièrement en minuscules : 'mamadou'
+  • Ligne 144 | NOM     | Nom entièrement en majuscules : 'FALL'
+  • Ligne 144 | PRÉNOM  | Nom entièrement en majuscules : 'SEYDOU'
   • Ligne 145 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
   • Ligne 145 | POIDS   | Poids manquant ou N/A
   • Ligne 146 | ÂGE     | Âge manquant
   • Ligne 146 | VILLE   | Ville mal orthographiée ou mal formatée : 'Saint louis'
   • Ligne 146 | GROUPE  | Groupe sanguin invalide : 'CC+'
+  • Ligne 147 | NOM     | Nom entièrement en majuscules : 'DIONE'
+  • Ligne 147 | PRÉNOM  | Nom entièrement en majuscules : 'MARIAMA'
   • Ligne 148 | GROUPE  | Groupe sanguin invalide : 'AB'
   • Ligne 150 | GROUPE  | Groupe sanguin invalide : 'B'
-  • Ligne 153 | VILLE   | Ville mal orthographiée ou mal formatée : 'KAOLACK'
+  • Ligne 152 | TÉL     | Préfixe '+221' supprimé de '+221775679639'
+  • Ligne 153 | VILLE   | Ville corrigée : 'KAOLACK' → 'Kaolack'
+  • Ligne 155 | NOM     | Nom entièrement en majuscules : 'SECK'
+  • Ligne 155 | PRÉNOM  | Nom entièrement en majuscules : 'KHADY'
   • Ligne 157 | VILLE   | Ville mal orthographiée ou mal formatée : 'Kaolak'
   • Ligne 157 | GROUPE  | Groupe sanguin invalide : 'Z-'
-  • Ligne 158 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 158 | TÉL     | Espaces/tirets supprimés dans '75 623 11 82'
+  • Ligne 158 | VILLE   | Ville corrigée : 'Thies' → 'Thiès'
   • Ligne 159 | ÂGE     | Âge irréaliste (> 120) : 130
-  • Ligne 162 | VILLE   | Ville mal orthographiée ou mal formatée : 'LOUGA'
+  • Ligne 162 | NOM     | Nom entièrement en minuscules : 'toure'
+  • Ligne 162 | TÉL     | Espaces/tirets supprimés dans '77-679-10-39'
+  • Ligne 162 | VILLE   | Ville corrigée : 'LOUGA' → 'Louga'
   • Ligne 164 | POIDS   | Poids non numérique : 'abc'
-  • Ligne 166 | VILLE   | Ville mal orthographiée ou mal formatée : 'Dakkar'
+  • Ligne 165 | NOM     | Nom entièrement en majuscules : 'FAYE'
+  • Ligne 165 | VILLE   | Espaces inutiles dans la ville 'Dakar '
+  • Ligne 166 | VILLE   | Ville corrigée : 'Dakkar' → 'Dakar'
   • Ligne 168 | ÂGE     | Âge irréaliste (> 120) : 172
-  • Ligne 170 | VILLE   | Ville mal orthographiée ou mal formatée : 'TAMBACOUNDA'
+  • Ligne 169 | TÉL     | Espaces/tirets supprimés dans '70-620-51-89'
+  • Ligne 170 | NOM     | Nom entièrement en majuscules : 'MENDY'
+  • Ligne 170 | TÉL     | Préfixe '00221' supprimé de '00221768314506'
+  • Ligne 170 | VILLE   | Ville corrigée : 'TAMBACOUNDA' → 'Tambacounda'
   • Ligne 172 | ÂGE     | Âge manquant
   • Ligne 173 | TAILLE  | Taille manquante ou N/A
-  • Ligne 178 | VILLE   | Ville mal orthographiée ou mal formatée : 'THIÈS'
-  • Ligne 180 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 177 | TÉL     | Espaces/tirets supprimés dans '75 621-7280'
+  • Ligne 178 | NOM     | Nom entièrement en majuscules : 'TOURE'
+  • Ligne 178 | VILLE   | Ville corrigée : 'THIÈS' → 'Thiès'
+  • Ligne 180 | VILLE   | Ville corrigée : 'Thies' → 'Thiès'
   • Ligne 181 | TAILLE  | Taille non numérique : 'xyz'
-  • Ligne 182 | ÂGE     | Âge égal à zéro (suspect) : 0
+  • Ligne 182 | ÂGE     | Âge égal à zéro (suspect, mais conservé) : 0
   • Ligne 183 | ÂGE     | Âge manquant
   • Ligne 183 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
-  • Ligne 184 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 184 | VILLE   | Ville corrigée : 'Thies' → 'Thiès'
   • Ligne 185 | GROUPE  | Groupe sanguin invalide : 'AA+'
-  • Ligne 186 | VILLE   | Ville mal orthographiée ou mal formatée : 'TAMBACOUNDA'
-  • Ligne 187 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
-  • Ligne 190 | ÂGE     | Âge égal à zéro (suspect) : 0
+  • Ligne 186 | TÉL     | Préfixe '00221' supprimé de '00221786394323'
+  • Ligne 186 | VILLE   | Ville corrigée : 'TAMBACOUNDA' → 'Tambacounda'
+  • Ligne 187 | TÉL     | Préfixe '+221' supprimé de '+221702827384'
+  • Ligne 187 | VILLE   | Ville corrigée : 'Thies' → 'Thiès'
+  • Ligne 190 | ÂGE     | Âge égal à zéro (suspect, mais conservé) : 0
+  • Ligne 191 | NOM     | Nom entièrement en majuscules : 'SAMBOU'
+  • Ligne 191 | PRÉNOM  | Nom entièrement en majuscules : 'BINETA'
   • Ligne 193 | POIDS   | Poids manquant ou N/A
-  • Ligne 195 | VILLE   | Ville mal orthographiée ou mal formatée : 'tambacounda'
-  • Ligne 197 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 195 | VILLE   | Espaces inutiles dans la ville 'tambacounda '
+  • Ligne 195 | VILLE   | Ville corrigée : 'tambacounda' → 'Tambacounda'
+  • Ligne 197 | NOM     | Nom entièrement en majuscules : 'GOMIS'
+  • Ligne 197 | PRÉNOM  | Nom entièrement en minuscules : 'astou'
+  • Ligne 197 | VILLE   | Ville corrigée : 'Thies' → 'Thiès'
   • Ligne 198 | ÂGE     | Âge manquant
   • Ligne 198 | VILLE   | Ville mal orthographiée ou mal formatée : 'LOUGA'
   • Ligne 198 | GROUPE  | Groupe sanguin invalide : 'A'
-  • Ligne 200 | VILLE   | Ville mal orthographiée ou mal formatée : 'kaolack'
-  • Ligne 201 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 200 | NOM     | Nom entièrement en minuscules : 'goudiaby'
+  • Ligne 200 | TÉL     | Préfixe '+221' supprimé de '+221753091745'
+  • Ligne 200 | VILLE   | Ville corrigée : 'kaolack' → 'Kaolack'
+  • Ligne 201 | VILLE   | Ville corrigée : 'Thies' → 'Thiès'
   • Ligne 202 | ÂGE     | Âge irréaliste (> 120) : 145
+  • Ligne 204 | NOM     | Nom entièrement en majuscules : 'MBODJ'
+  • Ligne 204 | PRÉNOM  | Nom entièrement en majuscules : 'MARIEME'
   • Ligne 205 | GROUPE  | Groupe sanguin invalide : 'B'
   • Ligne 208 | ÂGE     | Âge irréaliste (> 120) : 200
   • Ligne 208 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
-  • Ligne 210 | VILLE   | Ville mal orthographiée ou mal formatée : 'DAKAR'
-  • Ligne 212 | VILLE   | Ville mal orthographiée ou mal formatée : 'DIOURBEL'
-  • Ligne 213 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
-  • Ligne 214 | ÂGE     | Âge égal à zéro (suspect) : 0
-  • Ligne 216 | VILLE   | Ville mal orthographiée ou mal formatée : 'Tamba'
+  • Ligne 209 | NOM     | Nom entièrement en minuscules : 'faye'
+  • Ligne 209 | PRÉNOM  | Nom entièrement en minuscules : 'seydou'
+  • Ligne 210 | VILLE   | Ville corrigée : 'DAKAR' → 'Dakar'
+  • Ligne 212 | VILLE   | Ville corrigée : 'DIOURBEL' → 'Diourbel'
+  • Ligne 213 | NOM     | Nom entièrement en minuscules : 'bodian'
+  • Ligne 213 | VILLE   | Espaces inutiles dans la ville ' Thies'
+  • Ligne 213 | VILLE   | Ville corrigée : 'Thies' → 'Thiès'
+  • Ligne 214 | ÂGE     | Âge égal à zéro (suspect, mais conservé) : 0
+  • Ligne 216 | VILLE   | Ville corrigée : 'Tamba' → 'Tambacounda'
   • Ligne 217 | POIDS   | Poids non numérique : 'abc'
   • Ligne 218 | TAILLE  | Taille non numérique : 'xyz'
-  • Ligne 221 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 221 | VILLE   | Ville corrigée : 'Thies' → 'Thiès'
   • Ligne 222 | GROUPE  | Groupe sanguin invalide : 'OO+'
   • Ligne 223 | VILLE   | Ville mal orthographiée ou mal formatée : 'Saint louis'
   • Ligne 223 | GROUPE  | Groupe sanguin invalide : 'P+'
-  • Ligne 226 | VILLE   | Ville mal orthographiée ou mal formatée : 'TAMBACOUNDA'
-  • Ligne 228 | VILLE   | Ville mal orthographiée ou mal formatée : 'saint-louis'
-  • Ligne 229 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
+  • Ligne 226 | VILLE   | Ville corrigée : 'TAMBACOUNDA' → 'Tambacounda'
+  • Ligne 227 | TÉL     | Espaces/tirets supprimés dans '78-528-67-49'
+  • Ligne 228 | VILLE   | Ville corrigée : 'saint-louis' → 'Saint-Louis'
+  • Ligne 229 | TÉL     | Préfixe '00221' supprimé de '00221756623525'
+  • Ligne 229 | VILLE   | Ville corrigée : 'Thies' → 'Thiès'
   • Ligne 230 | GROUPE  | Groupe sanguin invalide : 'C+'
-  • Ligne 232 | VILLE   | Ville mal orthographiée ou mal formatée : 'Saint Louis'
+  • Ligne 232 | VILLE   | Ville corrigée : 'Saint Louis' → 'Saint-Louis'
   • Ligne 233 | POIDS   | Poids manquant ou N/A
   • Ligne 233 | TAILLE  | Taille manquante ou N/A
   • Ligne 235 | VILLE   | Ville mal orthographiée ou mal formatée : 'SAINT-LOUIS'
   • Ligne 235 | GROUPE  | Groupe sanguin invalide : 'OO+'
+  • Ligne 236 | TÉL     | Préfixe '00221' supprimé de '00221774416901'
   • Ligne 237 | TAILLE  | Taille manquante ou N/A
-  • Ligne 239 | VILLE   | Ville mal orthographiée ou mal formatée : 'LOUGA'
+  • Ligne 238 | NOM     | Nom entièrement en minuscules : 'gomis'
+  • Ligne 238 | PRÉNOM  | Nom entièrement en majuscules : 'AISSATOU'
+  • Ligne 239 | NOM     | Nom entièrement en majuscules : 'MANGA'
+  • Ligne 239 | VILLE   | Ville corrigée : 'LOUGA' → 'Louga'
   • Ligne 240 | ÂGE     | Âge irréaliste (> 120) : 999
-  • Ligne 244 | VILLE   | Ville mal orthographiée ou mal formatée : 'Saint louis'
-  • Ligne 245 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
-  • Ligne 248 | VILLE   | Ville mal orthographiée ou mal formatée : 'KAOLACK'
+  • Ligne 242 | TÉL     | Espaces/tirets supprimés dans '77 451-5088'
+  • Ligne 243 | TÉL     | Espaces/tirets supprimés dans '77-192-90-73'
+  • Ligne 244 | NOM     | Nom entièrement en majuscules : 'BA'
+  • Ligne 244 | VILLE   | Ville corrigée : 'Saint louis' → 'Saint-Louis'
+  • Ligne 245 | VILLE   | Ville corrigée : 'Thies' → 'Thiès'
+  • Ligne 248 | VILLE   | Ville corrigée : 'KAOLACK' → 'Kaolack'
   • Ligne 250 | ÂGE     | Âge manquant
+  • Ligne 251 | TÉL     | Espaces/tirets supprimés dans '70-686-62-94'
   • Ligne 253 | ÂGE     | Âge négatif : -3
   • Ligne 253 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
-  • Ligne 254 | VILLE   | Ville mal orthographiée ou mal formatée : 'KAOLACK'
+  • Ligne 254 | VILLE   | Ville corrigée : 'KAOLACK' → 'Kaolack'
+  • Ligne 255 | TÉL     | Espaces/tirets supprimés dans '78 889-3693'
   • Ligne 256 | ÂGE     | Âge manquant
   • Ligne 256 | VILLE   | Ville mal orthographiée ou mal formatée : 'Kaolak'
   • Ligne 256 | GROUPE  | Groupe sanguin invalide : 'D-'
-  • Ligne 257 | VILLE   | Ville mal orthographiée ou mal formatée : 'saint-louis'
+  • Ligne 257 | VILLE   | Ville corrigée : 'saint-louis' → 'Saint-Louis'
   • Ligne 259 | ÂGE     | Âge négatif : -12
-  • Ligne 260 | VILLE   | Ville mal orthographiée ou mal formatée : 'thies'
+  • Ligne 260 | NOM     | Nom entièrement en minuscules : 'toure'
+  • Ligne 260 | VILLE   | Ville corrigée : 'thies' → 'Thiès'
+  • Ligne 261 | VILLE   | Espaces inutiles dans la ville ' Kaolack'
   • Ligne 262 | GROUPE  | Groupe sanguin invalide : '++A'
-  • Ligne 263 | VILLE   | Ville mal orthographiée ou mal formatée : 'Dakarr'
-  • Ligne 265 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
-  • Ligne 268 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
-  • Ligne 271 | VILLE   | Ville mal orthographiée ou mal formatée : 'DAKAR'
-  • Ligne 272 | VILLE   | Ville mal orthographiée ou mal formatée : 'tambacounda'
+  • Ligne 263 | VILLE   | Ville corrigée : 'Dakarr' → 'Dakar'
+  • Ligne 265 | VILLE   | Ville corrigée : 'Thies' → 'Thiès'
+  • Ligne 268 | NOM     | Nom entièrement en majuscules : 'DIOUF'
+  • Ligne 268 | PRÉNOM  | Nom entièrement en majuscules : 'ALPHA'
+  • Ligne 268 | VILLE   | Ville corrigée : 'Thies' → 'Thiès'
+  • Ligne 269 | NOM     | Nom entièrement en majuscules : 'SONKO'
+  • Ligne 269 | PRÉNOM  | Nom entièrement en majuscules : 'MOUSSA'
+  • Ligne 271 | VILLE   | Ville corrigée : 'DAKAR' → 'Dakar'
+  • Ligne 272 | VILLE   | Espaces inutiles dans la ville 'tambacounda '
+  • Ligne 272 | VILLE   | Ville corrigée : 'tambacounda' → 'Tambacounda'
+  • Ligne 273 | NOM     | Nom entièrement en majuscules : 'TOURE'
+  • Ligne 273 | PRÉNOM  | Nom entièrement en majuscules : 'SEYDOU'
   • Ligne 275 | GROUPE  | Groupe sanguin invalide : 'BB-'
   • Ligne 276 | GROUPE  | Groupe sanguin invalide : 'O'
-  • Ligne 277 | VILLE   | Ville mal orthographiée ou mal formatée : 'Saint-louis'
+  • Ligne 277 | VILLE   | Ville corrigée : 'Saint-louis' → 'Saint-Louis'
   • Ligne 279 | ÂGE     | Âge manquant
   • Ligne 281 | GROUPE  | Groupe sanguin invalide : 'AB'
   • Ligne 282 | POIDS   | Poids manquant ou N/A
-  • Ligne 283 | VILLE   | Ville mal orthographiée ou mal formatée : 'SAINT-LOUIS'
-  • Ligne 284 | VILLE   | Ville mal orthographiée ou mal formatée : 'Ziginchor'
-  • Ligne 290 | VILLE   | Ville mal orthographiée ou mal formatée : 'TAMBACOUNDA'
+  • Ligne 283 | VILLE   | Ville corrigée : 'SAINT-LOUIS' → 'Saint-Louis'
+  • Ligne 284 | VILLE   | Ville corrigée : 'Ziginchor' → 'Ziguinchor'
+  • Ligne 286 | TÉL     | Préfixe '00221' supprimé de '00221705114321'
+  • Ligne 288 | NOM     | Nom entièrement en minuscules : 'thiaw'
+  • Ligne 288 | PRÉNOM  | Nom entièrement en majuscules : 'SEYDOU'
+  • Ligne 290 | VILLE   | Ville corrigée : 'TAMBACOUNDA' → 'Tambacounda'
   • Ligne 293 | ÂGE     | Âge négatif : -15
+  • Ligne 296 | TÉL     | Préfixe '+221' supprimé de '+221789619506'
   • Ligne 298 | TAILLE  | Taille manquante ou N/A
-  • Ligne 301 | VILLE   | Ville mal orthographiée ou mal formatée : 'saint louis'
+  • Ligne 301 | NOM     | Nom entièrement en majuscules : 'FALL'
+  • Ligne 301 | TÉL     | Espaces/tirets supprimés dans '75-317-94-93'
+  • Ligne 301 | VILLE   | Ville corrigée : 'saint louis' → 'Saint-Louis'
   • Ligne 40 | DOUBLON | Doublon supprimé : Sow Ousmane (709910914)
+  • Ligne 57 | DOUBLON | Doublon supprimé : Tendeng Mariama (752010496)
   • Ligne 72 | DOUBLON | Doublon supprimé : Faye Aminata (702919136)
-  • Ligne 143 | DOUBLON | Doublon supprimé : diop mamadou (703768991)
+  • Ligne 95 | DOUBLON | Doublon supprimé : Bodian Modou (783851852)
+  • Ligne 124 | DOUBLON | Doublon supprimé : Faye Seydou (777960328)
+  • Ligne 140 | DOUBLON | Doublon supprimé : Faye Khady (763484601)
+  • Ligne 141 | DOUBLON | Doublon supprimé : Sambou Bineta (776038571)
+  • Ligne 143 | DOUBLON | Doublon supprimé : Diop Mamadou (703768991)
+  • Ligne 154 | DOUBLON | Doublon supprimé : Toure Abdou (775679639)
   • Ligne 160 | DOUBLON | Doublon supprimé : Badiane Omar (709294272)
   • Ligne 175 | DOUBLON | Doublon supprimé : Mbaye Cheikh (773607983)
-  • Ligne 191 | DOUBLON | Doublon supprimé : SAMBOU BINETA (776038571)
+  • Ligne 191 | DOUBLON | Doublon supprimé : Sambou Bineta (776038571)
   • Ligne 195 | DOUBLON | Doublon supprimé : Toure Modou (788893693)
-  • Ligne 197 | DOUBLON | Doublon supprimé : GOMIS astou (756623525)
-  • Ligne 209 | DOUBLON | Doublon supprimé : faye seydou (777960328)
+  • Ligne 197 | DOUBLON | Doublon supprimé : Gomis Astou (756623525)
+  • Ligne 209 | DOUBLON | Doublon supprimé : Faye Seydou (777960328)
   • Ligne 211 | DOUBLON | Doublon supprimé : Mbodj Serigne (704700025)
-  • Ligne 221 | DOUBLON | Doublon supprimé : Fall  Saliou (785186414)
-  • Ligne 224 | DOUBLON | Doublon supprimé : Gaye  Astou (772016911)
+  • Ligne 221 | DOUBLON | Doublon supprimé : Fall Saliou (785186414)
+  • Ligne 224 | DOUBLON | Doublon supprimé : Gaye Astou (772016911)
+  • Ligne 229 | DOUBLON | Doublon supprimé : Gomis Astou (756623525)
   • Ligne 231 | DOUBLON | Doublon supprimé : Diop Mamadou (703768991)
-  • Ligne 239 | DOUBLON | Doublon supprimé : MANGA Dieynaba (778750676)
-  • Ligne 244 | DOUBLON | Doublon supprimé : BA Ibrahima (782259379)
-  • Ligne 247 | DOUBLON | Doublon supprimé : Fall  Coumba (753094235)
-  • Ligne 257 | DOUBLON | Doublon supprimé :  Badiane  Lamine (773545556)
+  • Ligne 239 | DOUBLON | Doublon supprimé : Manga Dieynaba (778750676)
+  • Ligne 244 | DOUBLON | Doublon supprimé : Ba Ibrahima (782259379)
+  • Ligne 247 | DOUBLON | Doublon supprimé : Fall Coumba (753094235)
+  • Ligne 251 | DOUBLON | Doublon supprimé : Dione Aminata (706866294)
+  • Ligne 255 | DOUBLON | Doublon supprimé : Toure Modou (788893693)
+  • Ligne 257 | DOUBLON | Doublon supprimé : Badiane Lamine (773545556)
   • Ligne 263 | DOUBLON | Doublon supprimé : Faye Oumou (782198058)
   • Ligne 271 | DOUBLON | Doublon supprimé : Kane Alioune (763030966)
   • Ligne 277 | DOUBLON | Doublon supprimé : Bodian Modou (783851852)
   • Ligne 278 | DOUBLON | Doublon supprimé : Cisse Ibrahima (758175395)
   • Ligne 291 | DOUBLON | Doublon supprimé : Faye Aminata (702919136)
+  • Ligne 295 | DOUBLON | Doublon supprimé : Sambou Omar (769479356)
 
 ───────────────────────────────────────────────────────
-  PATIENTS REJETÉS (82)
+  PATIENTS REJETÉS (77)
 ───────────────────────────────────────────────────────
 
   Patient #6 — Mbodj Serigne
@@ -318,9 +438,6 @@
   Patient #65 — Diallo Fatou
     → Ligne 66 | GROUPE  | Groupe sanguin invalide : 'O'
 
-  Patient #66 — Bodian Modou
-    → Ligne 67 | ÂGE     | Âge égal à zéro (suspect) : 0
-
   Patient #68 — Diatta Oumou
     → Ligne 69 | GROUPE  | Groupe sanguin invalide : 'P+'
 
@@ -378,9 +495,6 @@
   Patient #118 — Diallo Babacar
     → Ligne 119 | GROUPE  | Groupe sanguin invalide : 'O'
 
-  Patient #120 — Fall Mariama
-    → Ligne 121 | ÂGE     | Âge égal à zéro (suspect) : 0
-
   Patient #121 — SARR Kadiatou
     → Ligne 122 | GROUPE  | Groupe sanguin invalide : 'AB'
 
@@ -427,18 +541,12 @@
   Patient #180 — Seck Aminata
     → Ligne 181 | TAILLE  | Taille non numérique : 'xyz'
 
-  Patient #181 — Kouyate Kadiatou
-    → Ligne 182 | ÂGE     | Âge égal à zéro (suspect) : 0
-
   Patient #182 — NDIAYE Thierno
     → Ligne 183 | ÂGE     | Âge manquant
     → Ligne 183 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
 
   Patient #184 — Cisse Yacine
     → Ligne 185 | GROUPE  | Groupe sanguin invalide : 'AA+'
-
-  Patient #189 — Thiaw Marieme
-    → Ligne 190 | ÂGE     | Âge égal à zéro (suspect) : 0
 
   Patient #192 — Sow Dieynaba
     → Ligne 193 | POIDS   | Poids manquant ou N/A
@@ -457,9 +565,6 @@
   Patient #207 — Diatta Khady
     → Ligne 208 | ÂGE     | Âge irréaliste (> 120) : 200
     → Ligne 208 | VILLE   | Ville mal orthographiée ou mal formatée : 'Thies'
-
-  Patient #213 — Coly Mariam
-    → Ligne 214 | ÂGE     | Âge égal à zéro (suspect) : 0
 
   Patient #216 — Seck Modou
     → Ligne 217 | POIDS   | Poids non numérique : 'abc'

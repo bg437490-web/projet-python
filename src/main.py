@@ -1,6 +1,6 @@
 # =============================================================
 # main.py — Menu principal du système de nettoyage médical
-# Fait ensemble par les deux étudiants (Version Finale Stabilisée)
+# Fait en Binôme
 # =============================================================
 
 import os

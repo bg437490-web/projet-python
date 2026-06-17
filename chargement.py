@@ -1,5 +1,6 @@
 # =============================================================
 # chargement.py — Lecture du fichier patients_bruts.txt
+# Membre1 (Mame Binta Niang)
 # =============================================================
 
 import os

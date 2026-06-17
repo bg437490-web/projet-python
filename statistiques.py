@@ -1,6 +1,6 @@
 # =============================================================
 # statistiques.py — Calculs et affichage des statistiques
-# Étudiant 1 : Lecture & Vérification
+# Membre1 (Mame Binta Niang) : Lecture & Vérification
 # =============================================================
 
 
